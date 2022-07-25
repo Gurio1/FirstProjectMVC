@@ -8,57 +8,61 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AnimeWebSite
 build_property.RootNamespace = AnimeWebSite
-build_property.ProjectDir = D:\Andrey-PC\Desktop\FirstProjectMVC\AnimeWebSite\AnimeWebSite\
+build_property.ProjectDir = D:\Andrey-PC\Desktop\FirstProject\AnimeWebSite\AnimeWebSite\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Andrey-PC\Desktop\FirstProjectMVC\AnimeWebSite\AnimeWebSite
+build_property.MSBuildProjectDirectory = D:\Andrey-PC\Desktop\FirstProject\AnimeWebSite\AnimeWebSite
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Andrey-PC/Desktop/FirstProjectMVC/AnimeWebSite/AnimeWebSite/Views/Admin/Admin.cshtml]
+[D:/Andrey-PC/Desktop/FirstProject/AnimeWebSite/AnimeWebSite/Views/Admin/AddAnime.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkQW5pbWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Andrey-PC/Desktop/FirstProject/AnimeWebSite/AnimeWebSite/Views/Admin/Admin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRtaW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Andrey-PC/Desktop/FirstProjectMVC/AnimeWebSite/AnimeWebSite/Views/AnimeDetails/Details.cshtml]
+[D:/Andrey-PC/Desktop/FirstProject/AnimeWebSite/AnimeWebSite/Views/AnimeDetails/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5pbWVEZXRhaWxzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Andrey-PC/Desktop/FirstProjectMVC/AnimeWebSite/AnimeWebSite/Views/Authentication/ForgotPassword.cshtml]
+[D:/Andrey-PC/Desktop/FirstProject/AnimeWebSite/AnimeWebSite/Views/Authentication/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aGVudGljYXRpb25cRm9yZ290UGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Andrey-PC/Desktop/FirstProjectMVC/AnimeWebSite/AnimeWebSite/Views/Authentication/SignIn.cshtml]
+[D:/Andrey-PC/Desktop/FirstProject/AnimeWebSite/AnimeWebSite/Views/Authentication/SignIn.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aGVudGljYXRpb25cU2lnbkluLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Andrey-PC/Desktop/FirstProjectMVC/AnimeWebSite/AnimeWebSite/Views/Authentication/SignUp.cshtml]
+[D:/Andrey-PC/Desktop/FirstProject/AnimeWebSite/AnimeWebSite/Views/Authentication/SignUp.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aGVudGljYXRpb25cU2lnblVwLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Andrey-PC/Desktop/FirstProjectMVC/AnimeWebSite/AnimeWebSite/Views/Home/Index.cshtml]
+[D:/Andrey-PC/Desktop/FirstProject/AnimeWebSite/AnimeWebSite/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Andrey-PC/Desktop/FirstProjectMVC/AnimeWebSite/AnimeWebSite/Views/Home/Privacy.cshtml]
+[D:/Andrey-PC/Desktop/FirstProject/AnimeWebSite/AnimeWebSite/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Andrey-PC/Desktop/FirstProjectMVC/AnimeWebSite/AnimeWebSite/Views/Shared/Error.cshtml]
+[D:/Andrey-PC/Desktop/FirstProject/AnimeWebSite/AnimeWebSite/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Andrey-PC/Desktop/FirstProjectMVC/AnimeWebSite/AnimeWebSite/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Andrey-PC/Desktop/FirstProject/AnimeWebSite/AnimeWebSite/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Andrey-PC/Desktop/FirstProjectMVC/AnimeWebSite/AnimeWebSite/Views/_ViewImports.cshtml]
+[D:/Andrey-PC/Desktop/FirstProject/AnimeWebSite/AnimeWebSite/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Andrey-PC/Desktop/FirstProjectMVC/AnimeWebSite/AnimeWebSite/Views/_ViewStart.cshtml]
+[D:/Andrey-PC/Desktop/FirstProject/AnimeWebSite/AnimeWebSite/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Andrey-PC/Desktop/FirstProjectMVC/AnimeWebSite/AnimeWebSite/Views/Shared/_Layout.cshtml]
+[D:/Andrey-PC/Desktop/FirstProject/AnimeWebSite/AnimeWebSite/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-9bbggqvk6k

@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "Microsoft.AspNetCore.Http.Features/5.0.17": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "5.0.1",
+          "System.IO.Pipelines": "5.0.2"
+        },
+        "compile": {
+          "lib/net5.0/Microsoft.AspNetCore.Http.Features.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Microsoft.AspNetCore.Http.Features.dll": {}
+        }
+      },
       "Microsoft.EntityFrameworkCore/6.0.7": {
         "type": "package",
         "dependencies": {
@@ -183,6 +196,15 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
+      "System.IO.Pipelines/5.0.2": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/System.IO.Pipelines.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/System.IO.Pipelines.dll": {}
+        }
+      },
       "System.Runtime.CompilerServices.Unsafe/6.0.0": {
         "type": "package",
         "compile": {
@@ -194,10 +216,42 @@
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
         }
+      },
+      "AnimeWebSite.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "5.0.17"
+        },
+        "compile": {
+          "bin/placeholder/AnimeWebSite.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AnimeWebSite.Domain.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "Microsoft.AspNetCore.Http.Features/5.0.17": {
+      "sha512": "3jG2xS+dx8DDCGV/F+STdPTg89lX3ao3dF/VEPvJaz3wzBIjuadipTtYNEXDIVuOPZwb6jdmhrX9jkzOIBm5cw==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.http.features/5.0.17",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.AspNetCore.Http.Features.dll",
+        "lib/net461/Microsoft.AspNetCore.Http.Features.xml",
+        "lib/net5.0/Microsoft.AspNetCore.Http.Features.dll",
+        "lib/net5.0/Microsoft.AspNetCore.Http.Features.xml",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.xml",
+        "microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
+        "microsoft.aspnetcore.http.features.nuspec"
+      ]
+    },
     "Microsoft.EntityFrameworkCore/6.0.7": {
       "sha512": "9BsvGSpTzxvqnxH19wLBFivK5TzWmsHZQc/1cQ4b2e+k85aIG9R4FYewQLHZdPrAxNQImXjTyW5nRI3s1rpt6A==",
       "type": "package",
@@ -496,6 +550,32 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "System.IO.Pipelines/5.0.2": {
+      "sha512": "Iew+dfa6FFiyvWBdRmXApixRY1db+beyutpIck4SOSe0NLM8FD/7AD54MscqVLhvfSMLHO7KadjTRT7fqxOGTA==",
+      "type": "package",
+      "path": "system.io.pipelines/5.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.IO.Pipelines.dll",
+        "lib/net461/System.IO.Pipelines.xml",
+        "lib/netcoreapp3.0/System.IO.Pipelines.dll",
+        "lib/netcoreapp3.0/System.IO.Pipelines.xml",
+        "lib/netstandard1.3/System.IO.Pipelines.dll",
+        "lib/netstandard1.3/System.IO.Pipelines.xml",
+        "lib/netstandard2.0/System.IO.Pipelines.dll",
+        "lib/netstandard2.0/System.IO.Pipelines.xml",
+        "ref/netcoreapp2.0/System.IO.Pipelines.dll",
+        "ref/netcoreapp2.0/System.IO.Pipelines.xml",
+        "system.io.pipelines.5.0.2.nupkg.sha512",
+        "system.io.pipelines.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Runtime.CompilerServices.Unsafe/6.0.0": {
       "sha512": "/iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg==",
       "type": "package",
@@ -520,11 +600,16 @@
         "system.runtime.compilerservices.unsafe.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "AnimeWebSite.Domain/1.0.0": {
+      "type": "project",
+      "path": "../AnimeWebSite.Domain/AnimeWebSite.Domain.csproj",
+      "msbuildProject": "../AnimeWebSite.Domain/AnimeWebSite.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "D:\\Andrey-PC\\Desktop\\FirstProjectMVC\\AnimeWebSite\\AnimeWebSite.Domain\\AnimeWebSite.Domain.csproj",
+      "AnimeWebSite.Domain >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 6.0.7"
     ]
   },
@@ -535,11 +620,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Andrey-PC\\Desktop\\FirstProjectMVC\\AnimeWebSite\\AnimeWebSite.Infrastructure\\AnimeWebSite.Infrastructure.csproj",
+      "projectUniqueName": "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Infrastructure\\AnimeWebSite.Infrastructure.csproj",
       "projectName": "AnimeWebSite.Infrastructure",
-      "projectPath": "D:\\Andrey-PC\\Desktop\\FirstProjectMVC\\AnimeWebSite\\AnimeWebSite.Infrastructure\\AnimeWebSite.Infrastructure.csproj",
+      "projectPath": "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Infrastructure\\AnimeWebSite.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\Andrey-PC\\.nuget\\packages\\",
-      "outputPath": "D:\\Andrey-PC\\Desktop\\FirstProjectMVC\\AnimeWebSite\\AnimeWebSite.Infrastructure\\obj\\",
+      "outputPath": "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\VS Shared\\NuGetPackages"
@@ -560,8 +645,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Andrey-PC\\Desktop\\FirstProjectMVC\\AnimeWebSite\\AnimeWebSite.Domain\\AnimeWebSite.Domain.csproj": {
-              "projectPath": "D:\\Andrey-PC\\Desktop\\FirstProjectMVC\\AnimeWebSite\\AnimeWebSite.Domain\\AnimeWebSite.Domain.csproj"
+            "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Domain\\AnimeWebSite.Domain.csproj": {
+              "projectPath": "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Domain\\AnimeWebSite.Domain.csproj"
             }
           }
         }
@@ -599,16 +684,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1105",
-      "level": "Error",
-      "message": "Unable to find project information for 'D:\\Andrey-PC\\Desktop\\FirstProjectMVC\\AnimeWebSite\\AnimeWebSite.Domain\\AnimeWebSite.Domain.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
-      "libraryId": "D:\\Andrey-PC\\Desktop\\FirstProjectMVC\\AnimeWebSite\\AnimeWebSite.Domain\\AnimeWebSite.Domain.csproj",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    }
-  ]
+  }
 }

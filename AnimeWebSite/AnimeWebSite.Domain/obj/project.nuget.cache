@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "jWSSO12i14rZdNbgC0v4vNXGbPr6eFXxFX6fXZN5g9qJmRslG8/KLu5feU9CFnoUZPUYBJAptHnrIOz+iIGTAg==",
+  "dgSpecHash": "btkRPHbSjQPkaYY0v/oZavxrkCCSrUIKg+fNVUvtGZWImjsrfzHZFQap8TGsTpolPLihrgnyZPUkPzrFx9WavQ==",
   "success": true,
-  "projectFilePath": "D:\\Andrey-PC\\Desktop\\FirstProjectMVC\\AnimeWebSite\\AnimeWebSite.Domain1\\AnimeWebSite.Domain.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Domain\\AnimeWebSite.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Andrey-PC\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
+    "C:\\Users\\Andrey-PC\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\Andrey-PC\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,7 +1,7 @@
-﻿using AnimeWebSite.Domain1.Common;
+﻿using AnimeWebSite.Domain.Common;
 using Microsoft.EntityFrameworkCore;
 
-namespace AnimeWebSiteInfrastructure
+namespace AnimeWebSite.Infrastructure
 {
     public class AnimeWebSiteDbContext : DbContext
     {

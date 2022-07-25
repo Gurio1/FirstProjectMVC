@@ -1,4 +1,22 @@
 ﻿
+@using AnimeWebSite.Domain.Common
+@model IEnumerable<Anime>
+@{
+    ViewData["Title"] = "Добавление файла";
+}
+<h3 style="color:White">Выберите файл для загрузки</h3>
+<form asp-action="AddFile" asp-controller="Admin" method="post" enctype="multipart/form-data">
+    <input type="file" name="uploadedFile" /><br>
+    <input type="submit" value="Загрузить" />
+</form>
+ 
+<h3>Все файлы</h3>
+@foreach(var f in Model)
+{
+    <div data-setbg="@Url.Content(f.ImagePath)">
+    </div>
+}
+
 <div>
     <h1 style="color:White;">Admin page</h1>
 </div>

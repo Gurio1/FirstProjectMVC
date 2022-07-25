@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using static AnimeWebSite.Domain.Common.AddAnimeViewModel;
 
-namespace AnimeWebSite.Domain1.Common
+namespace AnimeWebSite.Domain.Common
 {
     public class Anime
     {
@@ -10,14 +11,17 @@ namespace AnimeWebSite.Domain1.Common
         public int Id { get; set; }
 
         [Column("Name")]
-        [Required]
+         [Required]
         public string Name { get; set; }
+
+        public string OriginalName { get; set; }
 
         public string? Description { get; set; }
 
-        [Column("CreatedOn")]
+        [Column("ReleaseDate")]
         [Required]
-        public DateOnly CreatedOn { get; set; }
+        [DataType(DataType.Date)]
+        public DateOnly ReleaseDate { get; set; }
 
         [Column("PostedOn")]
         [Required]
@@ -31,7 +35,11 @@ namespace AnimeWebSite.Domain1.Common
         [Required]
         public Genre Genre { get; set; }
 
-        public int? Series { get; set; }
+        public int? Episodes { get; set; }
+
+        public int? CurrentEpisodes { get; set; }
+
+        public string ?ImagePath { get; set; }
 
     }
 }

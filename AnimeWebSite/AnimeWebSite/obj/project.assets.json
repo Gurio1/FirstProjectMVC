@@ -2,6 +2,24 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "Datalist/7.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Datalist.Core": "[7.2.1]"
+        }
+      },
+      "Datalist.Core/7.2.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Linq.Dynamic": "[1.0.7, 2.0.0)"
+        },
+        "compile": {
+          "lib/net45/Datalist.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Datalist.Core.dll": {}
+        }
+      },
       "IdentityModel/6.0.0": {
         "type": "package",
         "compile": {
@@ -9,6 +27,19 @@
         },
         "runtime": {
           "lib/net6.0/IdentityModel.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Http.Features/5.0.17": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "5.0.1",
+          "System.IO.Pipelines": "5.0.2"
+        },
+        "compile": {
+          "lib/net5.0/Microsoft.AspNetCore.Http.Features.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Microsoft.AspNetCore.Http.Features.dll": {}
         }
       },
       "Microsoft.CSharp/4.5.0": {
@@ -109,6 +140,18 @@
         },
         "runtime": {
           "lib/netstandard2.0/_._": {}
+        }
+      },
+      "Microsoft.EntityFrameworkCore.InMemory/6.0.7": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "6.0.7"
+        },
+        "compile": {
+          "lib/net6.0/Microsoft.EntityFrameworkCore.InMemory.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.EntityFrameworkCore.InMemory.dll": {}
         }
       },
       "Microsoft.EntityFrameworkCore.Relational/6.0.7": {
@@ -460,6 +503,24 @@
           "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {}
         }
       },
+      "System.IO.Pipelines/5.0.2": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/System.IO.Pipelines.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/System.IO.Pipelines.dll": {}
+        }
+      },
+      "System.Linq.Dynamic/1.0.7": {
+        "type": "package",
+        "compile": {
+          "lib/net40/System.Linq.Dynamic.dll": {}
+        },
+        "runtime": {
+          "lib/net40/System.Linq.Dynamic.dll": {}
+        }
+      },
       "System.Runtime.Caching/4.7.0": {
         "type": "package",
         "dependencies": {
@@ -606,10 +667,64 @@
             "rid": "win"
           }
         }
+      },
+      "AnimeWebSite.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "5.0.17"
+        },
+        "compile": {
+          "bin/placeholder/AnimeWebSite.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AnimeWebSite.Domain.dll": {}
+        }
+      },
+      "AnimeWebSite.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "AnimeWebSite.Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "6.0.7"
+        },
+        "compile": {
+          "bin/placeholder/AnimeWebSite.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AnimeWebSite.Infrastructure.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "Datalist/7.2.1": {
+      "sha512": "UR4iapP0Zm8pBM03gqlmN5ubXPkQ9M1QEm+B6edDaFPxNECNIKXEpucjuJOlNuoSUFWQU9wdQeyCNlxvDSHRpQ==",
+      "type": "package",
+      "path": "datalist/7.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/Content/MvcDatalist/mvc-datalist.css",
+        "content/Scripts/MvcDatalist/mvc-datalist.js",
+        "content/Views/Shared/MvcDatalist/_Dialog.cshtml",
+        "content/Views/Web.config.transform",
+        "datalist.7.2.1.nupkg.sha512",
+        "datalist.nuspec"
+      ]
+    },
+    "Datalist.Core/7.2.1": {
+      "sha512": "AFVA/AMdkgHox5B6uNYdmviNrTFpvwnpX7e5vrXwFLdHd9SRrmMgd45rNOkrYjmih02npkiU9Jv087Qkog97pw==",
+      "type": "package",
+      "path": "datalist.core/7.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "datalist.core.7.2.1.nupkg.sha512",
+        "datalist.core.nuspec",
+        "lib/net45/Datalist.Core.dll"
+      ]
+    },
     "IdentityModel/6.0.0": {
       "sha512": "eVHCR7a6m/dm5RFcBzE3qs/Jg5j9R5Rjpu8aTOv9e4AFvaQtBXb5ah7kmwU+YwA0ufRwz4wf1hnIvsD2hSnI4g==",
       "type": "package",
@@ -635,6 +750,25 @@
         "lib/netstandard2.0/IdentityModel.dll",
         "lib/netstandard2.0/IdentityModel.pdb",
         "lib/netstandard2.0/IdentityModel.xml"
+      ]
+    },
+    "Microsoft.AspNetCore.Http.Features/5.0.17": {
+      "sha512": "3jG2xS+dx8DDCGV/F+STdPTg89lX3ao3dF/VEPvJaz3wzBIjuadipTtYNEXDIVuOPZwb6jdmhrX9jkzOIBm5cw==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.http.features/5.0.17",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.AspNetCore.Http.Features.dll",
+        "lib/net461/Microsoft.AspNetCore.Http.Features.xml",
+        "lib/net5.0/Microsoft.AspNetCore.Http.Features.dll",
+        "lib/net5.0/Microsoft.AspNetCore.Http.Features.xml",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.xml",
+        "microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
+        "microsoft.aspnetcore.http.features.nuspec"
       ]
     },
     "Microsoft.CSharp/4.5.0": {
@@ -833,6 +967,20 @@
         "lib/netstandard2.0/_._",
         "microsoft.entityframeworkcore.analyzers.6.0.7.nupkg.sha512",
         "microsoft.entityframeworkcore.analyzers.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.InMemory/6.0.7": {
+      "sha512": "n0hvDcK/tyrNMAFH0hmT0RRiK2ob8t+AwRbwn8uzQ47lvpfjvMRm8Mc113hb+zYsEBYdztthy69byTXNmjAsLw==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.inmemory/6.0.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/net6.0/Microsoft.EntityFrameworkCore.InMemory.dll",
+        "lib/net6.0/Microsoft.EntityFrameworkCore.InMemory.xml",
+        "microsoft.entityframeworkcore.inmemory.6.0.7.nupkg.sha512",
+        "microsoft.entityframeworkcore.inmemory.nuspec"
       ]
     },
     "Microsoft.EntityFrameworkCore.Relational/6.0.7": {
@@ -1442,6 +1590,45 @@
         "system.identitymodel.tokens.jwt.nuspec"
       ]
     },
+    "System.IO.Pipelines/5.0.2": {
+      "sha512": "Iew+dfa6FFiyvWBdRmXApixRY1db+beyutpIck4SOSe0NLM8FD/7AD54MscqVLhvfSMLHO7KadjTRT7fqxOGTA==",
+      "type": "package",
+      "path": "system.io.pipelines/5.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.IO.Pipelines.dll",
+        "lib/net461/System.IO.Pipelines.xml",
+        "lib/netcoreapp3.0/System.IO.Pipelines.dll",
+        "lib/netcoreapp3.0/System.IO.Pipelines.xml",
+        "lib/netstandard1.3/System.IO.Pipelines.dll",
+        "lib/netstandard1.3/System.IO.Pipelines.xml",
+        "lib/netstandard2.0/System.IO.Pipelines.dll",
+        "lib/netstandard2.0/System.IO.Pipelines.xml",
+        "ref/netcoreapp2.0/System.IO.Pipelines.dll",
+        "ref/netcoreapp2.0/System.IO.Pipelines.xml",
+        "system.io.pipelines.5.0.2.nupkg.sha512",
+        "system.io.pipelines.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Linq.Dynamic/1.0.7": {
+      "sha512": "BxEYab1SCgaqElLv57DrfPyi3ksK1Pbk5eXfwkXRZOdlC4aFT03QRkPEbYFBnFPnxhoLlc/Rg2b8vL0ffYSYWA==",
+      "type": "package",
+      "path": "system.linq.dynamic/1.0.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "NuGet.exe",
+        "lib/net40/System.Linq.Dynamic.dll",
+        "system.linq.dynamic.1.0.7.nupkg.sha512",
+        "system.linq.dynamic.nuspec"
+      ]
+    },
     "System.Runtime.Caching/4.7.0": {
       "sha512": "NdvNRjTPxYvIEhXQszT9L9vJhdQoX6AQ0AlhjTU+5NqFQVuacJTfhPVAvtGWNA2OJCqRiR/okBcZgMwI6MqcZg==",
       "type": "package",
@@ -1798,13 +1985,26 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "AnimeWebSite.Domain/1.0.0": {
+      "type": "project",
+      "path": "../AnimeWebSite.Domain/AnimeWebSite.Domain.csproj",
+      "msbuildProject": "../AnimeWebSite.Domain/AnimeWebSite.Domain.csproj"
+    },
+    "AnimeWebSite.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../AnimeWebSite.Infrastructure/AnimeWebSite.Infrastructure.csproj",
+      "msbuildProject": "../AnimeWebSite.Infrastructure/AnimeWebSite.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "D:\\Andrey-PC\\Desktop\\FirstProjectMVC\\AnimeWebSite\\AnimeWebSite.Domain\\AnimeWebSite.Domain.csproj",
+      "AnimeWebSite.Domain >= 1.0.0",
+      "AnimeWebSite.Infrastructure >= 1.0.0",
+      "Datalist >= 7.2.1",
       "IdentityModel >= 6.0.0",
       "Microsoft.EntityFrameworkCore >= 6.0.7",
+      "Microsoft.EntityFrameworkCore.InMemory >= 6.0.7",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.7"
     ]
   },
@@ -1815,11 +2015,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Andrey-PC\\Desktop\\FirstProjectMVC\\AnimeWebSite\\AnimeWebSite\\AnimeWebSite.csproj",
+      "projectUniqueName": "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite\\AnimeWebSite.csproj",
       "projectName": "AnimeWebSite",
-      "projectPath": "D:\\Andrey-PC\\Desktop\\FirstProjectMVC\\AnimeWebSite\\AnimeWebSite\\AnimeWebSite.csproj",
+      "projectPath": "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite\\AnimeWebSite.csproj",
       "packagesPath": "C:\\Users\\Andrey-PC\\.nuget\\packages\\",
-      "outputPath": "D:\\Andrey-PC\\Desktop\\FirstProjectMVC\\AnimeWebSite\\AnimeWebSite\\obj\\",
+      "outputPath": "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\VS Shared\\NuGetPackages"
@@ -1840,8 +2040,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Andrey-PC\\Desktop\\FirstProjectMVC\\AnimeWebSite\\AnimeWebSite.Domain\\AnimeWebSite.Domain.csproj": {
-              "projectPath": "D:\\Andrey-PC\\Desktop\\FirstProjectMVC\\AnimeWebSite\\AnimeWebSite.Domain\\AnimeWebSite.Domain.csproj"
+            "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Domain\\AnimeWebSite.Domain.csproj": {
+              "projectPath": "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Domain\\AnimeWebSite.Domain.csproj"
+            },
+            "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Infrastructure\\AnimeWebSite.Infrastructure.csproj": {
+              "projectPath": "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Infrastructure\\AnimeWebSite.Infrastructure.csproj"
             }
           }
         }
@@ -1856,11 +2059,19 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "Datalist": {
+            "target": "Package",
+            "version": "[7.2.1, )"
+          },
           "IdentityModel": {
             "target": "Package",
             "version": "[6.0.0, )"
           },
           "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[6.0.7, )"
+          },
+          "Microsoft.EntityFrameworkCore.InMemory": {
             "target": "Package",
             "version": "[6.0.7, )"
           },
@@ -1893,10 +2104,21 @@
   },
   "logs": [
     {
-      "code": "NU1105",
-      "level": "Error",
-      "message": "Unable to find project information for 'D:\\Andrey-PC\\Desktop\\FirstProjectMVC\\AnimeWebSite\\AnimeWebSite.Domain\\AnimeWebSite.Domain.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
-      "libraryId": "D:\\Andrey-PC\\Desktop\\FirstProjectMVC\\AnimeWebSite\\AnimeWebSite.Domain\\AnimeWebSite.Domain.csproj",
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Datalist.Core 7.2.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Datalist.Core",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'System.Linq.Dynamic 1.0.7' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "System.Linq.Dynamic",
       "targetGraphs": [
         "net6.0"
       ]
