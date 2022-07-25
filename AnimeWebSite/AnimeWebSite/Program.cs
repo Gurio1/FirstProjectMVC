@@ -1,7 +1,15 @@
+using AnimeWebSite.Infrastructure;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<AnimeWebSiteDbContext>(config =>
+{
+    config.UseInMemoryDatabase("Memory");
+});
 
 
 builder.Services.AddAuthentication("Cookie").AddCookie("Cookie",config =>
@@ -12,6 +20,9 @@ builder.Services.AddAuthentication("Cookie").AddCookie("Cookie",config =>
 builder.Services.AddAuthorization();
 
 var app = builder.Build();
+
+var context = app.Services.CreateScope().ServiceProvider.GetRequiredService<AnimeWebSiteDbContext>();
+InitializeDb.Init(context);
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
