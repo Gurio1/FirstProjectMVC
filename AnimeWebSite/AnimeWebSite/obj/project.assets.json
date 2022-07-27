@@ -2,6 +2,31 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "AutoMapper/11.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {}
+        }
+      },
+      "AutoMapper.Extensions.Microsoft.DependencyInjection/11.0.0": {
+        "type": "package",
+        "dependencies": {
+          "AutoMapper": "11.0.0",
+          "Microsoft.Extensions.Options": "6.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        }
+      },
       "Datalist/7.2.1": {
         "type": "package",
         "dependencies": {
@@ -42,7 +67,7 @@
           "lib/net5.0/Microsoft.AspNetCore.Http.Features.dll": {}
         }
       },
-      "Microsoft.CSharp/4.5.0": {
+      "Microsoft.CSharp/4.7.0": {
         "type": "package",
         "compile": {
           "ref/netcoreapp2.0/_._": {}
@@ -668,10 +693,25 @@
           }
         }
       },
+      "AnimeWebSite.Contracts/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "AnimeWebSite.Domain": "1.0.0",
+          "AutoMapper": "11.0.1"
+        },
+        "compile": {
+          "bin/placeholder/AnimeWebSite.Contracts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AnimeWebSite.Contracts.dll": {}
+        }
+      },
       "AnimeWebSite.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "AutoMapper": "11.0.1",
           "Microsoft.AspNetCore.Http.Features": "5.0.17"
         },
         "compile": {
@@ -694,10 +734,66 @@
         "runtime": {
           "bin/placeholder/AnimeWebSite.Infrastructure.dll": {}
         }
+      },
+      "AnimeWebSite.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "AnimeWebSite.Domain": "1.0.0",
+          "AnimeWebSite.Services.Abstractions": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/AnimeWebSite.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AnimeWebSite.Services.dll": {}
+        }
+      },
+      "AnimeWebSite.Services.Abstractions/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "AnimeWebSite.Contracts": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/AnimeWebSite.Services.Abstractions.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AnimeWebSite.Services.Abstractions.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "AutoMapper/11.0.1": {
+      "sha512": "WIadGC1pIwbnyTubvI577p3F++Bsj9q2Q3OaAc1I0QS+JhupN1xkdrPBhI9bPIeg63zM81tZplUNYkqU1HE5jQ==",
+      "type": "package",
+      "path": "automapper/11.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.11.0.1.nupkg.sha512",
+        "automapper.nuspec",
+        "icon.png",
+        "lib/netstandard2.1/AutoMapper.dll",
+        "lib/netstandard2.1/AutoMapper.xml"
+      ]
+    },
+    "AutoMapper.Extensions.Microsoft.DependencyInjection/11.0.0": {
+      "sha512": "0asw5WxdCFh2OTi9Gv+oKyH9SzxwYQSnO8TV5Dd0GggovILzJW4UimP26JAcxc3yB5NnC5urooZ1BBs8ElpiBw==",
+      "type": "package",
+      "path": "automapper.extensions.microsoft.dependencyinjection/11.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+        "automapper.extensions.microsoft.dependencyinjection.nuspec",
+        "icon.png",
+        "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll"
+      ]
+    },
     "Datalist/7.2.1": {
       "sha512": "UR4iapP0Zm8pBM03gqlmN5ubXPkQ9M1QEm+B6edDaFPxNECNIKXEpucjuJOlNuoSUFWQU9wdQeyCNlxvDSHRpQ==",
       "type": "package",
@@ -771,10 +867,10 @@
         "microsoft.aspnetcore.http.features.nuspec"
       ]
     },
-    "Microsoft.CSharp/4.5.0": {
-      "sha512": "kaj6Wb4qoMuH3HySFJhxwQfe8R/sJsNJnANrvv8WdFPMoNbKY5htfNscv+LHCu5ipz+49m2e+WQXpLXr9XYemQ==",
+    "Microsoft.CSharp/4.7.0": {
+      "sha512": "pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
       "type": "package",
-      "path": "microsoft.csharp/4.5.0",
+      "path": "microsoft.csharp/4.7.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -787,6 +883,7 @@
         "lib/netcoreapp2.0/_._",
         "lib/netstandard1.3/Microsoft.CSharp.dll",
         "lib/netstandard2.0/Microsoft.CSharp.dll",
+        "lib/netstandard2.0/Microsoft.CSharp.xml",
         "lib/portable-net45+win8+wp8+wpa81/_._",
         "lib/uap10.0.16299/_._",
         "lib/win8/_._",
@@ -796,7 +893,7 @@
         "lib/xamarinmac20/_._",
         "lib/xamarintvos10/_._",
         "lib/xamarinwatchos10/_._",
-        "microsoft.csharp.4.5.0.nupkg.sha512",
+        "microsoft.csharp.4.7.0.nupkg.sha512",
         "microsoft.csharp.nuspec",
         "ref/MonoAndroid10/_._",
         "ref/MonoTouch10/_._",
@@ -1986,6 +2083,11 @@
         "version.txt"
       ]
     },
+    "AnimeWebSite.Contracts/1.0.0": {
+      "type": "project",
+      "path": "../AnimeWebSite.Contracts/AnimeWebSite.Contracts.csproj",
+      "msbuildProject": "../AnimeWebSite.Contracts/AnimeWebSite.Contracts.csproj"
+    },
     "AnimeWebSite.Domain/1.0.0": {
       "type": "project",
       "path": "../AnimeWebSite.Domain/AnimeWebSite.Domain.csproj",
@@ -1995,12 +2097,26 @@
       "type": "project",
       "path": "../AnimeWebSite.Infrastructure/AnimeWebSite.Infrastructure.csproj",
       "msbuildProject": "../AnimeWebSite.Infrastructure/AnimeWebSite.Infrastructure.csproj"
+    },
+    "AnimeWebSite.Services/1.0.0": {
+      "type": "project",
+      "path": "../AnimeWebSite.Services/AnimeWebSite.Services.csproj",
+      "msbuildProject": "../AnimeWebSite.Services/AnimeWebSite.Services.csproj"
+    },
+    "AnimeWebSite.Services.Abstractions/1.0.0": {
+      "type": "project",
+      "path": "../AnimeWebSite.Services.Abstractions/AnimeWebSite.Services.Abstractions.csproj",
+      "msbuildProject": "../AnimeWebSite.Services.Abstractions/AnimeWebSite.Services.Abstractions.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "AnimeWebSite.Contracts >= 1.0.0",
       "AnimeWebSite.Domain >= 1.0.0",
       "AnimeWebSite.Infrastructure >= 1.0.0",
+      "AnimeWebSite.Services >= 1.0.0",
+      "AnimeWebSite.Services.Abstractions >= 1.0.0",
+      "AutoMapper.Extensions.Microsoft.DependencyInjection >= 11.0.0",
       "Datalist >= 7.2.1",
       "IdentityModel >= 6.0.0",
       "Microsoft.EntityFrameworkCore >= 6.0.7",
@@ -2040,11 +2156,20 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Contracts\\AnimeWebSite.Contracts.csproj": {
+              "projectPath": "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Contracts\\AnimeWebSite.Contracts.csproj"
+            },
             "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Domain\\AnimeWebSite.Domain.csproj": {
               "projectPath": "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Domain\\AnimeWebSite.Domain.csproj"
             },
             "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Infrastructure\\AnimeWebSite.Infrastructure.csproj": {
               "projectPath": "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Infrastructure\\AnimeWebSite.Infrastructure.csproj"
+            },
+            "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Services.Abstractions\\AnimeWebSite.Services.Abstractions.csproj": {
+              "projectPath": "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Services.Abstractions\\AnimeWebSite.Services.Abstractions.csproj"
+            },
+            "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Services\\AnimeWebSite.Services.csproj": {
+              "projectPath": "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Services\\AnimeWebSite.Services.csproj"
             }
           }
         }
@@ -2059,6 +2184,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+            "target": "Package",
+            "version": "[11.0.0, )"
+          },
           "Datalist": {
             "target": "Package",
             "version": "[7.2.1, )"

@@ -4,6 +4,74 @@
     "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite\\AnimeWebSite.csproj": {}
   },
   "projects": {
+    "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Contracts\\AnimeWebSite.Contracts.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Contracts\\AnimeWebSite.Contracts.csproj",
+        "projectName": "AnimeWebSite.Contracts",
+        "projectPath": "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Contracts\\AnimeWebSite.Contracts.csproj",
+        "packagesPath": "C:\\Users\\Andrey-PC\\.nuget\\packages\\",
+        "outputPath": "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Contracts\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\VS Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Andrey-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Domain\\AnimeWebSite.Domain.csproj": {
+                "projectPath": "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Domain\\AnimeWebSite.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Domain\\AnimeWebSite.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -44,6 +112,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            },
             "Microsoft.AspNetCore.Http.Features": {
               "target": "Package",
               "version": "[5.0.17, )"
@@ -136,6 +208,133 @@
         }
       }
     },
+    "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Services.Abstractions\\AnimeWebSite.Services.Abstractions.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Services.Abstractions\\AnimeWebSite.Services.Abstractions.csproj",
+        "projectName": "AnimeWebSite.Services.Abstractions",
+        "projectPath": "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Services.Abstractions\\AnimeWebSite.Services.Abstractions.csproj",
+        "packagesPath": "C:\\Users\\Andrey-PC\\.nuget\\packages\\",
+        "outputPath": "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Services.Abstractions\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\VS Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Andrey-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Contracts\\AnimeWebSite.Contracts.csproj": {
+                "projectPath": "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Contracts\\AnimeWebSite.Contracts.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Services\\AnimeWebSite.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Services\\AnimeWebSite.Services.csproj",
+        "projectName": "AnimeWebSite.Services",
+        "projectPath": "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Services\\AnimeWebSite.Services.csproj",
+        "packagesPath": "C:\\Users\\Andrey-PC\\.nuget\\packages\\",
+        "outputPath": "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\VS Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Andrey-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Domain\\AnimeWebSite.Domain.csproj": {
+                "projectPath": "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Domain\\AnimeWebSite.Domain.csproj"
+              },
+              "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Services.Abstractions\\AnimeWebSite.Services.Abstractions.csproj": {
+                "projectPath": "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Services.Abstractions\\AnimeWebSite.Services.Abstractions.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite\\AnimeWebSite.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -164,11 +363,20 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Contracts\\AnimeWebSite.Contracts.csproj": {
+                "projectPath": "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Contracts\\AnimeWebSite.Contracts.csproj"
+              },
               "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Domain\\AnimeWebSite.Domain.csproj": {
                 "projectPath": "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Domain\\AnimeWebSite.Domain.csproj"
               },
               "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Infrastructure\\AnimeWebSite.Infrastructure.csproj": {
                 "projectPath": "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Infrastructure\\AnimeWebSite.Infrastructure.csproj"
+              },
+              "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Services.Abstractions\\AnimeWebSite.Services.Abstractions.csproj": {
+                "projectPath": "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Services.Abstractions\\AnimeWebSite.Services.Abstractions.csproj"
+              },
+              "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Services\\AnimeWebSite.Services.csproj": {
+                "projectPath": "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Services\\AnimeWebSite.Services.csproj"
               }
             }
           }
@@ -183,6 +391,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
             "Datalist": {
               "target": "Package",
               "version": "[7.2.1, )"

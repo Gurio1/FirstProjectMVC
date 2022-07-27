@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "3eVKS72zDHHrsYmBodTf2kF5MhtlCYhUpy5MQCGUYFM=",
+  "Hash": "wfhZlL31//5EbUbiSDp39SCeUmu6Nn0yCDYkunHE5Do=",
   "Source": "AnimeWebSite",
   "BasePath": "_content/AnimeWebSite",
   "Mode": "Default",
@@ -219,23 +219,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
-    },
-    {
-      "Identity": "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite\\wwwroot\\Files\\lox.jpeg",
-      "SourceId": "AnimeWebSite",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite\\wwwroot\\",
-      "BasePath": "_content/AnimeWebSite",
-      "RelativePath": "Files/lox.jpeg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Files\\lox.jpeg"
     },
     {
       "Identity": "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite\\wwwroot\\Files\\Test1.jpg",

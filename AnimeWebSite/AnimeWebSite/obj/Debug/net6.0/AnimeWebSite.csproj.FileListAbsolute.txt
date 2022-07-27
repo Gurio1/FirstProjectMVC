@@ -65,3 +65,11 @@ D:\Andrey-PC\Desktop\FirstProject\AnimeWebSite\AnimeWebSite\bin\Debug\net6.0\Ani
 D:\Andrey-PC\Desktop\FirstProject\AnimeWebSite\AnimeWebSite\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.InMemory.dll
 D:\Andrey-PC\Desktop\FirstProject\AnimeWebSite\AnimeWebSite\bin\Debug\net6.0\Datalist.Core.dll
 D:\Andrey-PC\Desktop\FirstProject\AnimeWebSite\AnimeWebSite\bin\Debug\net6.0\System.Linq.Dynamic.dll
+D:\Andrey-PC\Desktop\FirstProject\AnimeWebSite\AnimeWebSite\bin\Debug\net6.0\AutoMapper.dll
+D:\Andrey-PC\Desktop\FirstProject\AnimeWebSite\AnimeWebSite\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\Andrey-PC\Desktop\FirstProject\AnimeWebSite\AnimeWebSite\bin\Debug\net6.0\AnimeWebSite.Contracts.dll
+D:\Andrey-PC\Desktop\FirstProject\AnimeWebSite\AnimeWebSite\bin\Debug\net6.0\AnimeWebSite.Contracts.pdb
+D:\Andrey-PC\Desktop\FirstProject\AnimeWebSite\AnimeWebSite\bin\Debug\net6.0\AnimeWebSite.Services.Abstractions.dll
+D:\Andrey-PC\Desktop\FirstProject\AnimeWebSite\AnimeWebSite\bin\Debug\net6.0\AnimeWebSite.Services.Abstractions.pdb
+D:\Andrey-PC\Desktop\FirstProject\AnimeWebSite\AnimeWebSite\bin\Debug\net6.0\AnimeWebSite.Services.dll
+D:\Andrey-PC\Desktop\FirstProject\AnimeWebSite\AnimeWebSite\bin\Debug\net6.0\AnimeWebSite.Services.pdb

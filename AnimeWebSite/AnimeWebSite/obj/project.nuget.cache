@@ -1,14 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "Lxl084w6jqn/URcZFU89MU8dzmK9w/4x5BRMsJJAy0C4wSb23JpE1Sc2r59ZBusgC/aFj7ypGOytxVwGhFo7Sg==",
+  "dgSpecHash": "1rtELIDCElfk8tAknJD6FfQz5so/J8I3/Yk6DqRVwCeeOsMk8Ox0FLoXeCc0yzTN15j1RfMMO1rMBUOpaI7t+w==",
   "success": true,
   "projectFilePath": "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite\\AnimeWebSite.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Andrey-PC\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\Andrey-PC\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "C:\\Users\\Andrey-PC\\.nuget\\packages\\datalist\\7.2.1\\datalist.7.2.1.nupkg.sha512",
     "C:\\Users\\Andrey-PC\\.nuget\\packages\\datalist.core\\7.2.1\\datalist.core.7.2.1.nupkg.sha512",
     "C:\\Users\\Andrey-PC\\.nuget\\packages\\identitymodel\\6.0.0\\identitymodel.6.0.0.nupkg.sha512",
     "C:\\Users\\Andrey-PC\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
-    "C:\\Users\\Andrey-PC\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\Andrey-PC\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Andrey-PC\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\Andrey-PC\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
     "C:\\Users\\Andrey-PC\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.7\\microsoft.entityframeworkcore.6.0.7.nupkg.sha512",

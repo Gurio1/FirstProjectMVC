@@ -1,5 +1,5 @@
-﻿@using AnimeWebSite.Domain.Common
-@using static AnimeWebSite.Domain.Common.AddAnimeViewModel
+﻿@using AnimeWebSite.Contracts
+@using static AnimeWebSite.Domain.Entities.Anime
 @model AddAnimeViewModel;
 <div class="row">
     <div class="col-lg-6">
@@ -29,8 +29,8 @@
                 <span asp-validation-for="ReleaseDate" class="text-danger"></span>
             </div>
             <div class="mb-3">
-                @Html.DropDownListFor(m =>m.AnimeGenre,new SelectList(Enum.GetValues(typeof(Genre))), "Select Genre",new { @class = "form-select" })))
-                <span style="color:White" asp-validation-for="AnimeGenre" class="text-danger"></span>
+                @Html.DropDownListFor(m =>m.Genres,new SelectList(Enum.GetValues(typeof(Genre))), "Select Genre",new { @class = "form-select" })))
+                <span style="color:White" asp-validation-for="Genres" class="text-danger"></span>
             </div>
             <div class="mb-3">
                 <label for="formFile" class="form-label"></label>

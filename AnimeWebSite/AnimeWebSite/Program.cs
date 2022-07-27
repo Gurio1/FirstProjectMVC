@@ -1,10 +1,20 @@
 using AnimeWebSite.Infrastructure;
+using AnimeWebSite.Services.Abstractions;
+using AnimeWebSite.Services;
 using Microsoft.EntityFrameworkCore;
+using AnimeWebSite.Infrastructure.Repository;
+using AnimeWebSite.Contracts.Profiles;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddAutoMapper(typeof(AnimeProfile).Assembly);
+
+builder.Services.AddScoped<IServiceManager, ServiceManager>();
+
+builder.Services.AddScoped<IRepositoryManager, RepositoryManager>();
 
 builder.Services.AddDbContext<AnimeWebSiteDbContext>(config =>
 {

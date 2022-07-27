@@ -1,4 +1,4 @@
-﻿@using AnimeWebSite.Domain.Common
+﻿@using AnimeWebSite.Domain.Entities
 @model IEnumerable<Anime>
 
 <!-- Hero Section Begin -->
@@ -77,7 +77,7 @@
                                     </div>
                                     <div class="product__item__text">
                                         <ul>
-                                            <li>@anime.Genre</li>
+                                            <li>@anime.Genres</li>
                                         </ul>
                                         <h5><a asp-controller="AnimeDetails" asp-action="Details" asp-route-id="@anime.Id">@anime.Name</a></h5>
                                     </div>

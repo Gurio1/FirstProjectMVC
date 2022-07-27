@@ -11,7 +11,7 @@ namespace AnimeWebSite.Controllers
         {
             _context = context;
         }
-        [HttpGet("{id}")]
+        [HttpGet("[controller]/{id}")]
         public IActionResult Details(int? Id)
         {
             var anime = _context.Animes.FirstOrDefault(a => a.Id == Id);

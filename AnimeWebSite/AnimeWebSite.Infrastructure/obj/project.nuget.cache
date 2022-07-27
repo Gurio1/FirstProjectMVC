@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "hHz2/JAXQ9w9TXKRg40+VhXZXUBLk8LaFF8IjfuQ7SFSCwR9ptKrjIGfkWJE4Cw6NqlUwbGgwCd1hvidNWtNiA==",
+  "dgSpecHash": "1KNjw34WYnX1xEBl5f/OXdc69P/wn9FYigrudoeXbqc5qU7pOSwNCJyR4VojyuY5bgCKRrzinqQ1zcstTJ/Qgw==",
   "success": true,
   "projectFilePath": "D:\\Andrey-PC\\Desktop\\FirstProject\\AnimeWebSite\\AnimeWebSite.Infrastructure\\AnimeWebSite.Infrastructure.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Andrey-PC\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\Andrey-PC\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
+    "C:\\Users\\Andrey-PC\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Andrey-PC\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.7\\microsoft.entityframeworkcore.6.0.7.nupkg.sha512",
     "C:\\Users\\Andrey-PC\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.7\\microsoft.entityframeworkcore.abstractions.6.0.7.nupkg.sha512",
     "C:\\Users\\Andrey-PC\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.7\\microsoft.entityframeworkcore.analyzers.6.0.7.nupkg.sha512",
