@@ -4,6 +4,8 @@ using AnimeWebSite.Services;
 using Microsoft.EntityFrameworkCore;
 using AnimeWebSite.Infrastructure.Repository;
 using AnimeWebSite.Contracts.Profiles;
+using AnimeWebSite.Identity.Domain.Entities.Users;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,20 +21,34 @@ builder.Services.AddScoped<IRepositoryManager, RepositoryManager>();
 builder.Services.AddDbContext<AnimeWebSiteDbContext>(config =>
 {
     config.UseInMemoryDatabase("Memory");
-});
+})
+   .AddIdentity<ApplicationUser,ApplicationRole>(options =>
+   {
+       options.Password.RequireDigit = true;
+       options.Password.RequireLowercase = false;
+       options.Password.RequireNonAlphanumeric = false;
+       options.Password.RequireUppercase = false;
+       options.Password.RequiredLength = 6;
+   })
+   .AddEntityFrameworkStores<AnimeWebSiteDbContext>();
 
-
-builder.Services.AddAuthentication("Cookie").AddCookie("Cookie",config =>
+builder.Services.ConfigureApplicationCookie(options =>
 {
-    config.LoginPath = "/Authentication/SignIn";
+    options.Cookie.HttpOnly = true;
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
+
+    options.LoginPath = "/Authentication/SignIn";
+    options.SlidingExpiration = true;
 });
 
 builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
-var context = app.Services.CreateScope().ServiceProvider.GetRequiredService<AnimeWebSiteDbContext>();
-InitializeDb.Init(context);
+using(var scope = app.Services.CreateScope())
+{
+    InitializeDb.Init(scope.ServiceProvider);
+}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -48,9 +64,6 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthentication();
-
-app.UseAuthorization();
-
 app.UseAuthorization();
 
 app.MapControllerRoute(

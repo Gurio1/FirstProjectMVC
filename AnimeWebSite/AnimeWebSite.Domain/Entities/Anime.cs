@@ -31,7 +31,7 @@ namespace AnimeWebSite.Domain.Entities
 
         public int? Episodes { get; set; }
 
-        public int? CurrentEpisodes { get; set; }
+        public int CurrentEpisodes { get; set; } = 0;
 
         public string? ImagePath { get; set; }
 

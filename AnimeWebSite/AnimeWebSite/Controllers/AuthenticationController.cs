@@ -2,16 +2,24 @@
 using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
 using AnimeWebSite.Domain.Authentication;
+using Microsoft.AspNetCore.Identity;
+using AnimeWebSite.Identity.Domain.Entities.Users;
 
 namespace AnimeWebSite.Controllers
 {
     public class AuthenticationController : Controller
     {
         private readonly ILogger<AuthenticationController> _logger;
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
 
-        public AuthenticationController(ILogger<AuthenticationController> logger)
+        public AuthenticationController(ILogger<AuthenticationController> logger,
+                                        UserManager<ApplicationUser> userManager,
+                                        SignInManager<ApplicationUser> signInManager)
         {
             _logger = logger;
+            _userManager = userManager;
+            _signInManager = signInManager;
         }
 
         public IActionResult SignIn(string returnUrl)
@@ -26,15 +34,23 @@ namespace AnimeWebSite.Controllers
                 return View(model);
             }
 
-            var claims = new List<Claim>
-            {
-                new Claim(ClaimTypes.Name,model.Email)
-            };
-            var claimIdentity = new ClaimsIdentity(claims, "Cookie");
-            var claimPrincipal = new ClaimsPrincipal(claimIdentity);
-            await HttpContext.SignInAsync("Cookie", claimPrincipal);
+            var user = await _userManager.FindByEmailAsync(model.Email);
 
-            return Redirect(model.ReturnUrl);
+            if(user is null)
+            {
+                ModelState.AddModelError("","User not found");
+                _logger.LogInformation("User not found");
+                return View(model);
+            }
+
+           var result = await _signInManager.PasswordSignInAsync(user, model.Password,false,false);
+
+            if (result.Succeeded)
+            {
+                return Redirect(model.ReturnUrl);
+            }
+            
+            return View(model);
         }
 
         public IActionResult SignUp()
