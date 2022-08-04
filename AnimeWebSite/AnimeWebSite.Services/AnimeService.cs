@@ -24,14 +24,14 @@ namespace AnimeWebSite.Services
 
             var anime = _mapper.Map<Anime>(viewModel);
 
-            _repositoryManager.AnimeRepository.Add(anime);
+            _repositoryManager.AnimeRepository.AddAsync(anime);
 
             await _repositoryManager.UnitOfWork.SaveChangesAsync();
         }
 
         public async Task DeleteAsync(int animeId)
         {
-             _repositoryManager.AnimeRepository.Delete(animeId);
+             _repositoryManager.AnimeRepository.DeleteAsync(animeId);
 
             await _repositoryManager.UnitOfWork.SaveChangesAsync();
         }

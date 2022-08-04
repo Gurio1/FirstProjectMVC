@@ -6,9 +6,9 @@ namespace AnimeWebSite.Domain.Repositories
     {
         Task<IEnumerable<Anime>> GetAllAnimesAsync();
         Task<Anime> GetAnimeByIdAsync(int id);
-        void Add(Anime anime);
+        Task AddAsync(Anime anime);
         void Update(Anime anime);
-        Task Delete(int id);
+        Task DeleteAsync(int id);
         void Delete(Anime anime);
     }
 }

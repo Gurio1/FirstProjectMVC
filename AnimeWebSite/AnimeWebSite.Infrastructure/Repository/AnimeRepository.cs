@@ -13,14 +13,14 @@ namespace AnimeWebSite.Infrastructure.Repository
             _dbContext = dbContext;
         }
 
-        public void Add(Anime anime)
+        public async Task AddAsync(Anime anime)
         {
-             _dbContext.Animes.AddAsync(anime);
+             await _dbContext.Animes.AddAsync(anime);
         }
 
-        public async Task Delete(int id)
+        public async Task DeleteAsync(int id)
         {
-             var anime = await _dbContext.Animes.FirstOrDefaultAsync(a => a.Id == id);
+            var anime = await GetAnimeByIdAsync(id);
 
             _dbContext.Animes.Remove(anime);
         }
