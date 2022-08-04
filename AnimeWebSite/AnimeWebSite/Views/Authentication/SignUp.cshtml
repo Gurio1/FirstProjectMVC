@@ -1,4 +1,5 @@
-﻿<!-- Normal Breadcrumb Begin -->
+﻿@model AnimeWebSite.Contracts.SignUpViewModel
+<!-- Normal Breadcrumb Begin -->
     <section class="normal-breadcrumb set-bg" data-setbg="img/normal-breadcrumb.jpg">
         <div class="container">
             <div class="row">
@@ -20,22 +21,25 @@
                 <div class="col-lg-6">
                     <div class="login__form">
                         <h3>Sign Up</h3>
-                        <form action="#">
+                        <form asp-controller="Authentication" asp-action="SignUp">
+                            <span style="color:red" asp-validation-for="Email"></span>
                             <div class="input__item">
-                                <input type="text" placeholder="Email address">
+                                <input asp-for ="Email" type="text" placeholder="Email address">
                                 <span class="icon_mail"></span>
                             </div>
+                             <span style="color:red" asp-validation-for="UserName"></span>
                             <div class="input__item">
-                                <input type="text" placeholder="Your Name">
+                                <input asp-for="UserName" type="text" placeholder="Your Name">
                                 <span class="icon_profile"></span>
                             </div>
+                            <span style="color:red" asp-validation-for="Password"></span>
                             <div class="input__item">
-                                <input type="text" placeholder="Password">
+                                <input asp-for="Password" type="text" placeholder="Password">
                                 <span class="icon_lock"></span>
                             </div>
                             <button type="submit" class="site-btn">Login Now</button>
                         </form>
-                        <h5>Already have an account? <a href="#">Log In!</a></h5>
+                        <h5>Already have an account? <a asp-controller="Authentication" asp-action="SignIn">Log In!</a></h5>
                     </div>
                 </div>
                 <div class="col-lg-6">

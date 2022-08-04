@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Authentication;
-using System.Security.Claims;
-using AnimeWebSite.Domain.Authentication;
 using Microsoft.AspNetCore.Identity;
 using AnimeWebSite.Identity.Domain.Entities.Users;
+using AnimeWebSite.Contracts;
 
 namespace AnimeWebSite.Controllers
 {
@@ -53,14 +51,36 @@ namespace AnimeWebSite.Controllers
             return View(model);
         }
 
-        public IActionResult SignUp()
+        public IActionResult SignUp(string returnUrl)
         {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> SignUp(SignUpViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = new ApplicationUser() { UserName = model.UserName, Email = model.Email };
+                var result = await _userManager.CreateAsync(user, model.Password);
+                if (result.Succeeded)
+                {
+                    await _signInManager.SignInAsync(user, isPersistent: false);
+                    return Redirect("/");
+                }
+            }
             return View();
         }
 
         public IActionResult ForgotPassword()
         {
             return View();
+        }
+
+        public async Task<IActionResult> LogOut()
+        {
+            await _signInManager.SignOutAsync();
+
+            return Redirect("/");
         }  
     }
 }
