@@ -1,4 +1,5 @@
-﻿using AnimeWebSite.Domain.Repositories;
+﻿using AnimeWebSite.Domain.Common;
+using AnimeWebSite.Domain.Repositories;
 
 namespace AnimeWebSite.Infrastructure.Repository
 {
@@ -7,5 +8,9 @@ namespace AnimeWebSite.Infrastructure.Repository
         IAnimeRepository AnimeRepository { get; }
 
         IUnitOfWork UnitOfWork { get; }
+
+        IGenericRepository<AnimeType> TypeRepository { get; }
+
+        IGenericRepository<TestGenre> GenreRepository { get; }
     }
 }
