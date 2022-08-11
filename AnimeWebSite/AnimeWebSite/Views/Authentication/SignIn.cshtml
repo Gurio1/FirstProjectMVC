@@ -2,8 +2,8 @@
 
 @{
     ViewData["Title"] = "SignIn Page";
+    var returnUrl = Context.Request.Query["ReturnUrl"];
 }
-
 <!-- Normal Breadcrumb Begin -->
 <section class="normal-breadcrumb set-bg" data-setbg="img/normal-breadcrumb.jpg">
     <div class="container">
@@ -25,14 +25,12 @@
             <div class="col-lg-6">
                 <div class="login__form">
                     <h3>Login</h3>
-                    <form asp-controller="Authentication" asp-action="SignIn">
-                        <input type="hidden" asp-for="ReturnUrl"/>
-                        <span style="color:red" asp-validation-for="Email"></span>
+                    <div asp-validation-summary="All" style="color:red" class="mb-3 ml-3"></div>
+                    <form asp-controller="Authentication" asp-action="SignIn" asp-route-ReturnUrl=@returnUrl>
                         <div class="input__item">
                             <input asp-for="Email" type="text" placeholder="Email address">
                             <span class="icon_mail"></span>
                         </div>
-                        <span style="color:red" asp-validation-for="Password"></span>
                         <div class="input__item">
                             <input asp-for="Password" type="password" placeholder="Password">
                             <span class="icon_lock"></span>
@@ -45,7 +43,7 @@
             <div class="col-lg-6">
                 <div class="login__register">
                     <h3>Dont’t Have An Account?</h3>
-                    <a href="#" class="primary-btn">Register Now</a>
+                    <a asp-controller="Authentication" asp-action="SignUp" asp-route-returnUrl="@returnUrl" class="primary-btn">Register Now</a>
                 </div>
             </div>
         </div>
@@ -56,10 +54,7 @@
                         <span>or</span>
                         <ul>
                             <li>
-                                <a href="#" class="facebook">
-                                    <i class="fa fa-facebook"></i> Sign in With
-                                    Facebook
-                                </a>
+                                <a asp-action="SignInFacebook" class="facebook"><i class="fa fa-facebook"></i> Sign in WithFacebook</a>
                             </li>
                             <li><a href="#" class="google"><i class="fa fa-google"></i> Sign in With Google</a></li>
                             <li>

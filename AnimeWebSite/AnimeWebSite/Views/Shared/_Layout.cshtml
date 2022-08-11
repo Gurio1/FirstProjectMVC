@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Authorization
+@inject IAuthorizationService AuthorizationService
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -43,13 +45,25 @@
                                         <li><a asp-controller="AnimeDetails" asp-action="Details">Anime Details</a></li>
                                         <li><a href="./anime-watching.html">Anime Watching</a></li>
                                         <li><a href="./blog-details.html">Blog Details</a></li>
-                                        <li><a asp-controller="Authentication" asp-action="SignUp">Sign Up</a></li>
-                                        <li><a asp-controller="Authentication" asp-action="SignIn">Login</a></li>
                                         <li><a asp-controller="Admin" asp-action="Admin">Admin</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="./blog.html">Our Blog</a></li>
                                 <li><a href="#">Contacts</a></li>
+                                <li>
+                                    <a asp-controller="Authentication" asp-action="LogOut"><span class="icon_profile"></span></a>
+                                    <ul class="dropdown">
+                                        @if (User.Identity.IsAuthenticated)
+                                        {
+                                            <li><a asp-controller="Authentication" asp-action="LogOut">Log Out</a></li>
+                                        }
+                                        else
+                                        {
+                                            <li><a asp-controller="Authentication" asp-action="SignUp">Sign Up</a></li>
+                                            <li><a asp-controller="Authentication" asp-action="SignIn">Sign In</a></li>
+                                        }
+                                    </ul>
+                                </li>
                             </ul>
                         </nav>
                     </div>
@@ -57,7 +71,10 @@
                 <div class="col-lg-2">
                     <div class="header__right">
                         <a href="#" class="search-switch"><span class="icon_search"></span></a>
-                        <a asp-controller="Authentication" asp-action="LogOut"><span class="icon_profile"></span></a>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <span style="color:burlywood">Hello,@User.Identity.Name</span>
+                        }
                     </div>
                 </div>
             </div>
