@@ -2,6 +2,7 @@
 using AnimeWebSite.Identity.Domain.Entities.Users;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
+using System.Security.Claims;
 using static AnimeWebSite.Domain.Entities.Anime;
 
 namespace AnimeWebSite.Infrastructure
@@ -48,6 +49,10 @@ namespace AnimeWebSite.Infrastructure
             };
 
             var result = userManager.CreateAsync(user, "123qwe").GetAwaiter().GetResult();
+            if (result.Succeeded)
+            {
+                userManager.AddClaimAsync(user, new Claim(ClaimTypes.Role, "Administrator")).GetAwaiter().GetResult();
+            }
 
             context.SaveChanges();
         }

@@ -1,5 +1,7 @@
 ﻿using AnimeWebSite.Domain.Entities;
 using AutoMapper;
+using Microsoft.AspNetCore.Identity;
+using System.Security.Claims;
 
 namespace AnimeWebSite.Contracts.Profiles
 {
@@ -10,8 +12,10 @@ namespace AnimeWebSite.Contracts.Profiles
             CreateMap<AddAnimeViewModel, Anime>()
                 .ForMember(dest => dest.ReleaseDate,
                            opt => opt.MapFrom(src => DateOnly.FromDateTime(src.ReleaseDate)))
-                .ForMember(dest =>dest.PostedOn,
-                 opt => opt.MapFrom(src => DateTime.Today));
+                .AfterMap((_, dest) =>
+                {
+                    dest.PostedOn = DateTime.Now;
+                });
         }
     }
 }
