@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AnimeWebSite.Controllers
 {
-    [Authorize]
+    [Authorize(Policy ="Administrator")]
     public class AdminController : Controller
     {
         private readonly IServiceManager _serviceManager;
