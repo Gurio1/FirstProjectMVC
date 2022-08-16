@@ -23,7 +23,7 @@ namespace AnimeWebSite.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddAnime(AddAnimeViewModel anime)
+        public async Task<IActionResult> AddAnimeAsync(AddAnimeViewModel anime)
         {
             if (anime is null)
             {
@@ -31,7 +31,7 @@ namespace AnimeWebSite.Controllers
             }
              anime.ImagePath = getPath(anime.Image);
 
-            _serviceManager.AnimeService.CreateAsync(anime);
+            await _serviceManager.AnimeService.CreateAsync(anime);
 
             return Redirect("/");
         }
@@ -53,7 +53,7 @@ namespace AnimeWebSite.Controllers
         }
         public IActionResult Admin()
         {
-            ViewBag.Name = User.Identity.Name;
+            ViewBag.Name = User?.Identity?.Name;
             return View();
         }
     }

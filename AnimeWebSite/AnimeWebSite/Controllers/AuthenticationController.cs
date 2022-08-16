@@ -35,7 +35,6 @@ namespace AnimeWebSite.Controllers
         [HttpPost]
         public async Task<IActionResult> SignIn(SignInViewModel model,string? ReturnUrl)
         {
-            Console.WriteLine($"Url-{ReturnUrl}");
             ReturnUrl = ReturnUrl ?? Url.Content("~/");
 
             if (!ModelState.IsValid)
@@ -76,8 +75,17 @@ namespace AnimeWebSite.Controllers
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    var claimsList = new List<Claim>()
+                    {
+                        new Claim(ClaimTypes.Name, model.UserName),
+                        new Claim(ClaimTypes.Email,model.Email),
+                        new Claim(ClaimTypes.Role, "User")
+                    };
+
+                    _userManager.AddClaimsAsync(user, claimsList).GetAwaiter().GetResult();
+
                     await _signInManager.SignInAsync(user, isPersistent: false);
-                    _userManager.AddClaimAsync(user, new Claim(ClaimTypes.Role, "User")).GetAwaiter().GetResult();
+            
                     return Redirect(returnUrl);
                 }
 
@@ -132,9 +140,12 @@ namespace AnimeWebSite.Controllers
             var result = await _userManager.CreateAsync(user);
             if (result.Succeeded)
             {
-                result = await _userManager.AddLoginAsync(user, info);
-                signInResult = await _signInManager.ExternalLoginSignInAsync(info.LoginProvider, info.ProviderKey, false, false);
-                return Redirect(returnUrl);
+                 result = await _userManager.AddLoginAsync(user, info);
+                if (result.Succeeded)
+                {
+                    signInResult = await _signInManager.ExternalLoginSignInAsync(info.LoginProvider, info.ProviderKey, false, false);
+                    return Redirect(returnUrl);
+                }
             }
 
             foreach (var error in result.Errors)

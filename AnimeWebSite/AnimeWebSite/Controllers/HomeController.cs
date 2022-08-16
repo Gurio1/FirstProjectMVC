@@ -1,19 +1,22 @@
 ﻿using AnimeWebSite.Infrastructure;
+using AnimeWebSite.Services.Abstractions;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AnimeWebSite.Controllers
 {
     public class HomeController : Controller
     {
-        private AnimeWebSiteDbContext _context;
+        private readonly IServiceManager _serviceManager;
 
-        public HomeController(AnimeWebSiteDbContext context)
+        public HomeController(IServiceManager serviceManager)
         {
-            _context = context;
+            _serviceManager = serviceManager;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> IndexAsync()
         {
-            return View(_context.Animes.ToList());
+            var animeList =  await _serviceManager.AnimeService.GetAllAsync();
+
+            return View(animeList);
         }
     }
 }
