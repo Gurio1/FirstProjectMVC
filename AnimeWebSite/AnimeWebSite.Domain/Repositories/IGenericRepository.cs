@@ -1,19 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AnimeWebSite.Domain.Entities;
 
 namespace AnimeWebSite.Domain.Repositories
 {
-    public interface IGenericRepository<T>  where T:class
+    public interface IGenericRepository<TEntity>  where TEntity : BaseEntity
     {
-        Task AddAsync(T entity);
-        void Update(T entity);
-        Task<T> GetByIdAsync(int id);
-        Task<IEnumerable<T>> GetAllAsync();
-        Task DeleteByIdAsync(int id);
-        void Delete(T entity);
+        Task<IEnumerable<TEntity>> GetAllAsync();
+
+        Task<TEntity> GetByIdAsync(int id);
+
+        Task<TEntity> CreateAsync(TEntity entity);
+
+        Task<TEntity> UpdateAsync(TEntity entity);
+
+        Task<bool> DeleteAsync(int id);
 
     }
 }
