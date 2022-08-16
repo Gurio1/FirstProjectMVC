@@ -1,13 +1,11 @@
 ﻿using AnimeWebSite.Contracts;
+using AnimeWebSite.Domain.Entities;
 
 namespace AnimeWebSite.Services.Abstractions
 {
-    public interface IAnimeService
+    public interface IAnimeService : IGenericService<Anime>
     {
-        Task<IEnumerable<AnimeDTO>> GetAllAsync();
-        Task<AnimeDTO> GetByIdAsync(int animeId);
-        void CreateAsync(AddAnimeViewModel viewModel);
-        Task UpdateAsync(UpdateAnimeViewModel animeUpdateVM);
-        Task DeleteAsync(int animeId);
+        Task<bool> CreateAsync(AddAnimeViewModel viewModel);
+        Task<bool> UpdateAsync(UpdateAnimeViewModel animeUpdateVM);
     }
 }

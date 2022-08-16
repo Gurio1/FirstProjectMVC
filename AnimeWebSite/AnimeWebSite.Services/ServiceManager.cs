@@ -1,5 +1,4 @@
 ﻿using AnimeWebSite.Domain.Repositories;
-using AnimeWebSite.Infrastructure.Repository;
 using AnimeWebSite.Services.Abstractions;
 using AutoMapper;
 
@@ -9,9 +8,9 @@ namespace AnimeWebSite.Services
     {
         private readonly Lazy<IAnimeService> _lazyAnimeService;
 
-        public ServiceManager(IRepositoryManager repositoryManager,IMapper mapper)
+        public ServiceManager(IAnimeRepository animeRepository,IMapper mapper)
         {
-            _lazyAnimeService = new Lazy<IAnimeService>(() => new AnimeService(repositoryManager, mapper));
+            _lazyAnimeService = new Lazy<IAnimeService>(() => new AnimeService(animeRepository, mapper));
         }
 
         public IAnimeService AnimeService => _lazyAnimeService.Value;
