@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="/css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/user-profile.css" type="text/css">
     <link href="~/Content/MvcDatalist/mvc-datalist.css" rel="stylesheet">
 </head>
 <body>
@@ -51,10 +52,11 @@
                                 <li><a href="./blog.html">Our Blog</a></li>
                                 <li><a href="#">Contacts</a></li>
                                 <li>
-                                    <a asp-controller="Authentication" asp-action="LogOut"><span class="icon_profile"></span></a>
+                                    <a asp-controller="UserProfile" asp-action="UserProfile"><span class="icon_profile"></span></a>
                                     <ul class="dropdown">
                                         @if (User.Identity.IsAuthenticated)
                                         {
+                                            <li><a asp-controller="UserProfile" asp-action="UserProfile">My Profile</a></li>
                                             <li><a asp-controller="Authentication" asp-action="LogOut">Log Out</a></li>
                                         }
                                         else
