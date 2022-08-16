@@ -70,7 +70,7 @@
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                 <div class="product__item">
                                     <div class="product__item__pic set-bg">
-                                        <a asp-controller="AnimeDetails" asp-action="Details" asp-route-id="@anime.Id"> <img src="@anime.ImagePath" alt="@anime.Name / @anime.OriginalName"> </a>
+                                        <a asp-controller="Anime" asp-action="Details" asp-route-id="@anime.Id"> <img src="@anime.ImagePath" alt="@anime.Name / @anime.OriginalName"> </a>
                                         <div class="ep">@anime.CurrentEpisodes / @anime.Episodes</div>
                                         <div class="comment"><i class="fa fa-comments"></i> 11</div>
                                         <div class="view"><i class="fa fa-eye"></i> 9141</div>
@@ -79,7 +79,7 @@
                                         <ul>
                                             <li>@anime.Genres</li>
                                         </ul>
-                                        <h5><a asp-controller="AnimeDetails" asp-action="Details" asp-route-id="@anime.Id">@anime.Name</a></h5>
+                                        <h5><a asp-controller="Anime" asp-action="Details" asp-route-id="@anime.Id">@anime.Name</a></h5>
                                     </div>
                                 </div>
                             </div>
