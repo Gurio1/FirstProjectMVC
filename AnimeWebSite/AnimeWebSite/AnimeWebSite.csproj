@@ -25,7 +25,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AnimeWebSite.Contracts\AnimeWebSite.Contracts.csproj" />
-    <ProjectReference Include="..\AnimeWebSite.Domain\AnimeWebSite.Domain.csproj" />
     <ProjectReference Include="..\AnimeWebSite.Infrastructure\AnimeWebSite.Infrastructure.csproj" />
     <ProjectReference Include="..\AnimeWebSite.Services\AnimeWebSite.Services.csproj" />
   </ItemGroup>

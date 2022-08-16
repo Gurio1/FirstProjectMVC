@@ -1,10 +1,10 @@
-using AnimeWebSite.Contracts.Profiles;
+using AnimeWebSite.Contracts;
+using AnimeWebSite.Domain.Repositories;
 using AnimeWebSite.Identity.Domain.Entities.Users;
 using AnimeWebSite.Infrastructure;
-using AnimeWebSite.Infrastructure.Repository;
+using AnimeWebSite.Infrastructure.Repositories;
 using AnimeWebSite.Services;
 using AnimeWebSite.Services.Abstractions;
-using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 
@@ -13,14 +13,12 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddScoped<Mapper>();
+builder.Services.AddAutoMapper(typeof(AddAnimeViewModel).Assembly);
 
-builder.Services.AddAutoMapper(typeof(AnimeProfile).Assembly);
-builder.Services.AddAutoMapper(typeof(ExternalLoginProfile).Assembly);
+builder.Services.AddScoped<IAnimeRepository, AnimeRepository>();
 
+builder.Services.AddScoped<IAnimeService, AnimeService>();
 builder.Services.AddScoped<IServiceManager, ServiceManager>();
-
-builder.Services.AddScoped<IRepositoryManager, RepositoryManager>();
 
 builder.Services.AddDbContext<AnimeWebSiteDbContext>(config =>
 {

@@ -9,7 +9,7 @@ namespace AnimeWebSite.Domain.Exceptions
     public sealed class AnimeNotFoundException : NotFoundException
     {
         public AnimeNotFoundException(int id)
-            :base($"The anime with the Id {id} was not found")
+            :base($"The anime with the Id: {id} was not found")
         {
 
         }
