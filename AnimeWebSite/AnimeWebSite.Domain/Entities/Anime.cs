@@ -4,19 +4,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AnimeWebSite.Domain.Entities
 {
-    public class Anime
+    public class Anime : BaseEntity
     {
-        [Required]
-        public int Id { get; set; }
-
-        [Required]
         public string Name { get; set; }
 
         public string OriginalName { get; set; }
 
         public string? Description { get; set; }
 
-        [Required]
         [DataType(DataType.Date)]
         public DateOnly ReleaseDate { get; set; }
 
@@ -26,7 +21,7 @@ namespace AnimeWebSite.Domain.Entities
         public int Votes { get; set; }
 
         public float Grade { get; set; }
-        [Required]
+
         public Genre Genres { get; set; }
 
         public int? Episodes { get; set; }
