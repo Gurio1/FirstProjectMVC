@@ -1,11 +1,6 @@
 ﻿using AnimeWebSite.Domain.Entities;
 using AnimeWebSite.Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AnimeWebSite.Infrastructure.Repositories
 {
@@ -33,7 +28,7 @@ namespace AnimeWebSite.Infrastructure.Repositories
             }
             catch(Exception ex)
             {
-                throw new Exception($"{nameof(entity)} could not be created:){ex.Message}");
+                throw new Exception($"{nameof(entity)} could not be created with id {entity.Id}:{ex.Message}");
             }
         }
 

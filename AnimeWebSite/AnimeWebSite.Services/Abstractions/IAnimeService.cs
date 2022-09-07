@@ -1,5 +1,7 @@
 ﻿using AnimeWebSite.Contracts;
+using AnimeWebSite.Domain.Common;
 using AnimeWebSite.Domain.Entities;
+using AnimeWebSite.Identity.Domain.Entities.Users;
 
 namespace AnimeWebSite.Services.Abstractions
 {
@@ -7,5 +9,6 @@ namespace AnimeWebSite.Services.Abstractions
     {
         Task<bool> CreateAsync(AddAnimeViewModel viewModel);
         Task<bool> UpdateAsync(UpdateAnimeViewModel animeUpdateVM);
+        Task<Anime> GetByIdWithCommentsAsync(int id);
     }
 }

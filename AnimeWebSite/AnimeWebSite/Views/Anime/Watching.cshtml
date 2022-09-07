@@ -1,0 +1,81 @@
+﻿@using AnimeWebSite.Domain.Entities
+@model Anime
+
+<!-- Anime Section Begin -->
+<section class="anime-details spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="anime__video__player">
+                    <video id="player" playsinline controls data-poster="./videos/anime-watch.jpg">
+                        <source src="videos/1.mp4" type="video/mp4" />
+                        <!-- Captions are optional -->
+                        <track kind="captions" label="English captions" src="#" srclang="en" default />
+                    </video>
+                </div>
+                <div class="anime__details__episodes">
+                    <div class="section-title">
+                        <h5>List Name</h5>
+                    </div>
+                    <a href="#">Ep 01</a>
+                    <a href="#">Ep 02</a>
+                    <a href="#">Ep 03</a>
+                    <a href="#">Ep 04</a>
+                    <a href="#">Ep 05</a>
+                    <a href="#">Ep 06</a>
+                    <a href="#">Ep 07</a>
+                    <a href="#">Ep 08</a>
+                    <a href="#">Ep 09</a>
+                    <a href="#">Ep 10</a>
+                    <a href="#">Ep 11</a>
+                    <a href="#">Ep 12</a>
+                    <a href="#">Ep 13</a>
+                    <a href="#">Ep 14</a>
+                    <a href="#">Ep 15</a>
+                    <a href="#">Ep 16</a>
+                    <a href="#">Ep 17</a>
+                    <a href="#">Ep 18</a>
+                    <a href="#">Ep 19</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="anime__details__form mb-4">
+                    <div class="section-title">
+                        <h5>Your Comment</h5>
+                    </div>
+                    <form asp-action="Comment">
+                        <input type="hidden" name="id" value="@Model.Id" />
+                        <textarea name="comment" placeholder="Your Comment"></textarea>
+                        <button type="submit"><i class="fa fa-location-arrow"></i> Review</button>
+                    </form>
+                </div>
+                <div class="anime__details__review">
+                    <div class="section-title">
+                        <h5>Reviews</h5>
+                    </div>
+                    @if (Model.Comments is not null)
+                    {
+                        foreach (var item in Model.Comments)
+                        {
+                            <div class="anime__review__item">
+                                <div class="anime__review__item__pic">
+                                    <img src="@item.User.ImagePath">
+                                </div>
+                                <div class="anime__review__item__text">
+                                    <h6>@item.User.UserName - <span>@item.PostedOn</span></h6>
+                                    <p>
+                                        @item.Content
+                                    </p>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Anime Section End -->

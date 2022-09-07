@@ -3,5 +3,7 @@
     public interface IServiceManager
     {
         IAnimeService AnimeService { get; }
+
+        ICommentsService CommentsService { get; }
     }
 }

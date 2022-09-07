@@ -1,6 +1,5 @@
 ﻿using AnimeWebSite.Domain.Common;
 using AnimeWebSite.Domain.Repositories;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,12 +8,11 @@ using System.Threading.Tasks;
 
 namespace AnimeWebSite.Infrastructure.Repositories
 {
-    public class GenreRepository : GenericRepository<TestGenre>, IGenreRepository
+    public class CommentsRepository : GenericRepository<AnimeComment>,ICommentsRepository
     {
-        public GenreRepository(AnimeWebSiteDbContext dbContext) : base(dbContext)
+        public CommentsRepository(AnimeWebSiteDbContext dbContext) : base(dbContext)
         {
-            
-        }
 
+        }
     }
 }

@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AnimeWebSite.Contracts\AnimeWebSite.Contracts.csproj" />
     <ProjectReference Include="..\AnimeWebSite.Domain\AnimeWebSite.Domain.csproj" />
   </ItemGroup>
 

@@ -47,12 +47,11 @@ namespace AnimeWebSite.Controllers
 
             if(user is null)
             {
-                ModelState.AddModelError("","User not found");
-                _logger.LogInformation("User not found");
+                ModelState.AddModelError("", "Invalid email");
                 return View(model);
             }
 
-           var result = await _signInManager.PasswordSignInAsync(user, model.Password,false,false);
+            var result = await _signInManager.PasswordSignInAsync(user, model.Password,false,false);
 
             if (result.Succeeded)
             {
@@ -71,18 +70,11 @@ namespace AnimeWebSite.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser() { UserName = model.UserName, Email = model.Email };
+                var user = _mapper.Map<ApplicationUser>(model);
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    var claimsList = new List<Claim>()
-                    {
-                        new Claim(ClaimTypes.Name, model.UserName),
-                        new Claim(ClaimTypes.Email,model.Email),
-                        new Claim(ClaimTypes.Role, "User")
-                    };
-
-                    _userManager.AddClaimsAsync(user, claimsList).GetAwaiter().GetResult();
+                    await _userManager.AddToRoleAsync(user,"User");
 
                     await _signInManager.SignInAsync(user, isPersistent: false);
             
@@ -110,10 +102,9 @@ namespace AnimeWebSite.Controllers
             return Redirect("/");
         }
 
-        public IActionResult SignInFacebook()
+        public IActionResult SignInFacebook(string returnUrl = "/")
         {
             var provider = FacebookDefaults.AuthenticationScheme;
-            var returnUrl = "/";
             var redirectUrl = Url.Action(nameof(ExternalLoginCallBack),"Authentication", new { returnUrl });
 
             var props = _signInManager.ConfigureExternalAuthenticationProperties(provider, redirectUrl);
@@ -122,9 +113,10 @@ namespace AnimeWebSite.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> ExternalLoginCallBack(string returnUrl = "/")
+        public async Task<IActionResult> ExternalLoginCallBack(string returnUrl)
         {
             var info =  await _signInManager.GetExternalLoginInfoAsync();
+
             if (info == null)
             {
                 return RedirectToAction(nameof(SignIn));
@@ -136,11 +128,32 @@ namespace AnimeWebSite.Controllers
                 return Redirect(returnUrl);
             }
 
-            var user = _mapper.Map<ApplicationUser>(info);
+            var user = await _userManager.FindByEmailAsync(info.Principal.Claims.First(x => x.Type == ClaimTypes.Email).Value);
+
+            if (user is not null)
+            {
+                 var resul = await _userManager.AddLoginAsync(user, info);
+                if (resul.Succeeded)
+                {
+                    signInResult = await _signInManager.ExternalLoginSignInAsync(info.LoginProvider, info.ProviderKey, false, false);
+                    return Redirect(returnUrl);
+                }
+            }
+
+             user = _mapper.Map<ApplicationUser>(info);
+
             var result = await _userManager.CreateAsync(user);
             if (result.Succeeded)
             {
-                 result = await _userManager.AddLoginAsync(user, info);
+                 result = await _userManager.AddToRoleAsync(user, "User");
+
+                if (!result.Succeeded)
+                {
+                    _logger.LogError($"Cant add {nameof(user)} to role");
+                }
+
+
+                result = await _userManager.AddLoginAsync(user, info);
                 if (result.Succeeded)
                 {
                     signInResult = await _signInManager.ExternalLoginSignInAsync(info.LoginProvider, info.ProviderKey, false, false);

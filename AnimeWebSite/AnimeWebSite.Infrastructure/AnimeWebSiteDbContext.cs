@@ -10,7 +10,8 @@ namespace AnimeWebSite.Infrastructure
     {
         public AnimeWebSiteDbContext(DbContextOptions<AnimeWebSiteDbContext> options) : base(options) { }
 
-        public DbSet<Anime> Animes { get; set; }
+        public DbSet<Anime> Animes { get; set; }     
+        public DbSet<AnimeComment> Comments { get; set; }
         public DbSet<TestGenre>Genres { get; set; }   
         public DbSet<AnimeType>Types { get; set; }
         public DbSet<ApplicationUser> Users { get; set; }

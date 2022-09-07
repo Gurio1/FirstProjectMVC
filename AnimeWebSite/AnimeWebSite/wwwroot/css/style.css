@@ -430,7 +430,7 @@ ol {
 }
 
 .header__right a:last-child {
-	margin-right: 0;
+	margin-right: 0px;
 }
 
 .slicknav_menu {
@@ -1124,9 +1124,9 @@ ol {
 }
 
 .anime__review__item__pic img {
-	height: 50px;
-	width: 50px;
-	border-radius: 50%;
+	height: 70px;
+	width: 70px;
+	border-radius: 20%;
 }
 
 .anime__review__item__text {

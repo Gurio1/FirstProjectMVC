@@ -1,4 +1,5 @@
 ﻿using AnimeWebSite.Contracts;
+using AnimeWebSite.Services;
 using AnimeWebSite.Services.Abstractions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -9,13 +10,13 @@ namespace AnimeWebSite.Controllers
     public class AdminController : Controller
     {
         private readonly IServiceManager _serviceManager;
-        
-        private readonly IWebHostEnvironment _appEnvironment;
+        private readonly IFileSystemService _fIleSystem;
 
-        public AdminController(IServiceManager serviceManager, IWebHostEnvironment appEnvironment)
+        public AdminController(IServiceManager serviceManager,
+                               IFileSystemService fIleSystem)
         {
-            _appEnvironment = appEnvironment;
             _serviceManager = serviceManager;
+            _fIleSystem = fIleSystem;
         }
         public IActionResult AddAnime()
         {
@@ -29,31 +30,15 @@ namespace AnimeWebSite.Controllers
             {
                 return View(anime);
             }
-             anime.ImagePath = getPath(anime.Image);
+            anime.ImagePath = _fIleSystem.Create(anime.Image, FileSystemService.animeImages,null);
 
             await _serviceManager.AnimeService.CreateAsync(anime);
 
             return Redirect("/");
         }
 
-        public string getPath(IFormFile uploadedFile)
-        {
-            var path = string.Empty;
-            if (uploadedFile != null)
-            {
-
-                path = "/Files/" + uploadedFile.FileName;
-
-                using (var fileStream = new FileStream(_appEnvironment.WebRootPath + path, FileMode.Create))
-                {
-                    uploadedFile.CopyTo(fileStream);
-                }
-            }
-            return path;
-        }
         public IActionResult Admin()
         {
-            ViewBag.Name = User?.Identity?.Name;
             return View();
         }
     }

@@ -1,15 +1,21 @@
-﻿<div class="container">
+﻿@using AnimeWebSite.Identity.Domain.Entities.Users
+@using Microsoft.AspNetCore.Identity
+@using System.Security.Claims
+@model AnimeWebSite.Contracts.User.UpdateUserViewModel
+
+<link rel="stylesheet" href="/css/user-profile.css" type="text/css">
+
+<div class="container">
     <div class="main-body">
         <div class="row gutters-sm">
             <div class="col-md-4 mb-3">
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex flex-column align-items-center text-center">
-                            <img src="" class="rounded-circle" width="150">
+                            <img max-height="350" src="@Model.ImagePath">
                             <div class="mt-3">
-                                <h4>John Doe</h4>
-                                <p class="text-secondary mb-1">Full Stack Developer</p>
-                                <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
+                                <h4>@Model.UserName</h4>
+                                <p class="text-secondary mb-1" GetRole="@User.Claims.First(a =>a.Type == ClaimTypes.NameIdentifier).Value"></p>
                                 <button class="btn btn-outline-primary">Message</button>
                             </div>
                         </div>
@@ -24,7 +30,7 @@
                                 <h6 class="mb-0">Full Name</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                @User.Identity.Name
+                                @Model.UserName
                             </div>
                         </div>
                         <hr>
@@ -33,22 +39,16 @@
                                 <h6 class="mb-0">Email</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                @User.Identity.
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <h6 class="mb-0">Address</h6>
-                            </div>
-                            <div class="col-sm-9 text-secondary">
-                                Bay Area, San Francisco, CA
+                                @Model.Email
                             </div>
                         </div>
                         <hr>
                         <div class="row">
                             <div class="col-sm-12">
-                                <a class="btn btn-info " target="__blank" href="">Edit</a>
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
+                                    Edit
+                                </button>
+                                @await Html.PartialAsync("_UpdateUser")
                             </div>
                         </div>
                     </div>

@@ -6,7 +6,6 @@ using AnimeWebSite.Infrastructure.Repositories;
 using AnimeWebSite.Services;
 using AnimeWebSite.Services.Abstractions;
 using Microsoft.EntityFrameworkCore;
-using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,9 +15,13 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddAutoMapper(typeof(AddAnimeViewModel).Assembly);
 
 builder.Services.AddScoped<IAnimeRepository, AnimeRepository>();
+builder.Services.AddScoped<ICommentsRepository, CommentsRepository>();
 
 builder.Services.AddScoped<IAnimeService, AnimeService>();
+builder.Services.AddScoped<ICommentsService, CommentsService>();
 builder.Services.AddScoped<IServiceManager, ServiceManager>();
+
+builder.Services.AddScoped<IFileSystemService, FileSystemService>();
 
 builder.Services.AddDbContext<AnimeWebSiteDbContext>(config =>
 {
@@ -33,7 +36,7 @@ builder.Services.AddDbContext<AnimeWebSiteDbContext>(config =>
        options.Password.RequiredLength = 6;
 
        options.User.RequireUniqueEmail = true;
-       options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+éôÿöû÷óâñêàìåïèíğòãîüøëáùäşçæõıúÉÔßÖÛ×ÓÂÑÊÀÌÅÏÈÍĞÒÃÎÜØËÁÙÄŞÇÆÕİÚ";
+       options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+éôÿöû÷óâñêàìåïèíğòãîüøëáùäşçæõıúÉÔßÖÛ×ÓÂÑÊÀÌÅÏÈÍĞÒÃÎÜØËÁÙÄŞÇÆÕİÚ ";
    })
    .AddEntityFrameworkStores<AnimeWebSiteDbContext>();
 
@@ -57,13 +60,12 @@ builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("Administrator", builder =>
     {
-        builder.RequireClaim(ClaimTypes.Role, "Administrator");
+        builder.RequireRole("Administrator");
     });
 
     options.AddPolicy("User", builder =>
     {
-        builder.RequireAssertion(x => x.User.HasClaim(ClaimTypes.Role, "Administrator")
-                                     || x.User.HasClaim(ClaimTypes.Role, "User"));
+        builder.RequireRole("User", "Administrator");
     });
 });
 

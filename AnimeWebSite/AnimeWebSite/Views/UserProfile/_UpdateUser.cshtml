@@ -1,0 +1,35 @@
+﻿@model AnimeWebSite.Contracts.User.UpdateUserViewModel
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Update</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form asp-action="UpdateUser" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <input type="hidden" asp-for="ImagePath" class="form-control">
+                    <div class="mb-3">
+                        <label class="form-label">User name</label>
+                        <input asp-for="UserName" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input type="email" asp-for="Email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label"></label>
+                        <input asp-for="UploadedImage" class="form-control" type="file" id="formFile">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" value="UpdateUser" class="btn btn-primary" />
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

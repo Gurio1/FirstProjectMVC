@@ -15,7 +15,6 @@ namespace AnimeWebSite.Domain.Entities
         [DataType(DataType.Date)]
         public DateOnly ReleaseDate { get; set; }
 
-        [Required]
         public DateTime PostedOn { get; set; }
 
         public int Votes { get; set; }
@@ -28,9 +27,11 @@ namespace AnimeWebSite.Domain.Entities
 
         public int CurrentEpisodes { get; set; } = 0;
 
-        public string? ImagePath { get; set; }
+        public string ImagePath { get; set; }
 
         public AnimeType Type { get; set; }
+
+        public ICollection<AnimeComment> Comments { get; set; } = new List<AnimeComment>();
 
         public enum Genre
         {

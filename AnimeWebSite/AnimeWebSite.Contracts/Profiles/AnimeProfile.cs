@@ -16,6 +16,7 @@ namespace AnimeWebSite.Contracts.Profiles
                 {
                     dest.PostedOn = DateTime.Now;
                 });
+            CreateMap<Anime, AnimeDTO>();
         }
     }
 }
