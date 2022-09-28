@@ -18,33 +18,33 @@ namespace AnimeWebSite.Services
         {
             var userFolder = entityId?.ToString();
 
-            var path = $"/File/{folderName}";
+            var path = $"/Files/{folderName}";
 
-            var pathWithEnviroment = _appEnvironmen.WebRootPath;
+            var pathWithEnviroment = string.Empty;
             if (file != null)
             {
                 if (userFolder is null)
                 {
-                    path = Path.Combine(path, file.FileName);
+                    path = path + $"/{file.FileName}";
                 }
                 else
                 {
-                    path = Path.Combine(path, userFolder);
+                    path = path + $"/{userFolder}/";
 
-                    pathWithEnviroment = pathWithEnviroment + path;
+                    pathWithEnviroment = _appEnvironmen.WebRootPath + path;
 
                     if (!Directory.Exists(pathWithEnviroment))
                     {
                         Directory.CreateDirectory(pathWithEnviroment);
                     }
 
-                    path = path + "/" + file.FileName;
+                    path = path + $"/imageForUserId{userFolder}.jpg";
                 }
 
                 pathWithEnviroment = _appEnvironmen.WebRootPath + path;
                 using (var stream = new FileStream(pathWithEnviroment, FileMode.Create))
                 {
-                    file.CopyToAsync(stream);
+                     file.CopyTo(stream);
                 }
             }
             return path;

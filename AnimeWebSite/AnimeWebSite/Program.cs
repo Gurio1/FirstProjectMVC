@@ -16,9 +16,12 @@ builder.Services.AddAutoMapper(typeof(AddAnimeViewModel).Assembly);
 
 builder.Services.AddScoped<IAnimeRepository, AnimeRepository>();
 builder.Services.AddScoped<ICommentsRepository, CommentsRepository>();
+builder.Services.AddScoped<IAnimeReviewsRepository, AnimeReviewsRepository>();
+
 
 builder.Services.AddScoped<IAnimeService, AnimeService>();
 builder.Services.AddScoped<ICommentsService, CommentsService>();
+builder.Services.AddScoped<IAnimeReviewsService, AnimeReviewsService>();
 builder.Services.AddScoped<IServiceManager, ServiceManager>();
 
 builder.Services.AddScoped<IFileSystemService, FileSystemService>();
