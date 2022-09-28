@@ -32,5 +32,23 @@ namespace AnimeWebSite.Infrastructure.Repositories
                 throw new Exception($"Could't retrieve entity with id={id} : {ex.Message}");
             }
         }
+        public async Task<Anime> GetByIdWithReviewsAsync(int id)
+        {
+            try
+            {
+                var entity = await _context.Animes.Include(c => c.Reviews.OrderByDescending(d => d.PostedOn)).ThenInclude(u => u.User).Where(x => x.Id == id).AsNoTracking().FirstOrDefaultAsync();
+
+                if (entity is null)
+                {
+                    throw new Exception($"Could not find entity with id= {id}");
+                }
+
+                return entity;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Could't retrieve entity with id={id} : {ex.Message}");
+            }
+        }
     }
 }

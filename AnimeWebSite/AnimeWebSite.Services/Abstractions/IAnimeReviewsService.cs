@@ -1,4 +1,5 @@
 ﻿using AnimeWebSite.Domain.Entities;
+using AnimeWebSite.Domain.Repositories;
 using AnimeWebSite.Identity.Domain.Entities.Users;
 using System;
 using System.Collections.Generic;
@@ -8,8 +9,8 @@ using System.Threading.Tasks;
 
 namespace AnimeWebSite.Services.Abstractions
 {
-    public interface ICommentsService : IGenericService<AnimeComment>
+    public interface IAnimeReviewsService : IGenericService<AnimeReviews>
     {
-        Task<bool> CreateAsync(int animeId, int userd, string comment);
+        Task<bool> CreateAsync(int animeId, int userId, string comment);
     }
 }

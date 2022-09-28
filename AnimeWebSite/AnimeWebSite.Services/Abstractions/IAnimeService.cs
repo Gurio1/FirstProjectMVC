@@ -10,5 +10,6 @@ namespace AnimeWebSite.Services.Abstractions
         Task<bool> CreateAsync(AddAnimeViewModel viewModel);
         Task<bool> UpdateAsync(UpdateAnimeViewModel animeUpdateVM);
         Task<Anime> GetByIdWithCommentsAsync(int id);
+        Task<Anime> GetByIdWithReviewsAsync(int id);
     }
 }

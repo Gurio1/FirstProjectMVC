@@ -1,26 +1,23 @@
 ﻿using AnimeWebSite.Domain.Entities;
-using AnimeWebSite.Services.Abstractions;
 using AnimeWebSite.Domain.Repositories;
 using AnimeWebSite.Identity.Domain.Entities.Users;
-using AutoMapper;
+using AnimeWebSite.Services.Abstractions;
 
 namespace AnimeWebSite.Services
 {
-    public class CommentsService : GenericService<ICommentsRepository, AnimeComment>, ICommentsService
+    public class AnimeReviewsService : GenericService<IAnimeReviewsRepository, AnimeReviews>, IAnimeReviewsService
     {
-        private readonly ICommentsRepository _repository;
-        private readonly IMapper _mapper;
+        private readonly IAnimeReviewsRepository _repository;
 
-        public CommentsService(ICommentsRepository repository,
-                               IMapper mapper) : base(repository)
+        public AnimeReviewsService(IAnimeReviewsRepository repository) : base(repository)
         {
             _repository = repository;
-            _mapper = mapper;
         }
 
         public async Task<bool> CreateAsync(int animeId, int userId, string comment)
         {
-            var animeComment = new AnimeComment
+
+            var animeReview = new AnimeReviews
             {
                 AnimeId = animeId,
                 UserId = userId,
@@ -28,9 +25,9 @@ namespace AnimeWebSite.Services
                 PostedOn = DateTime.Now,
             };
 
-            var result = await _repository.CreateAsync(animeComment);
+            var result = await _repository.CreateAsync(animeReview);
 
-            if(result is null)
+            if (result is null)
             {
                 return false;
             }

@@ -5,5 +5,7 @@
         IAnimeService AnimeService { get; }
 
         ICommentsService CommentsService { get; }
+
+        IAnimeReviewsService ReviewsService { get; }
     }
 }

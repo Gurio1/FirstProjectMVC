@@ -1,8 +1,6 @@
 ﻿using AnimeWebSite.Contracts;
-using AnimeWebSite.Domain.Common;
 using AnimeWebSite.Domain.Entities;
 using AnimeWebSite.Domain.Repositories;
-using AnimeWebSite.Identity.Domain.Entities.Users;
 using AnimeWebSite.Services.Abstractions;
 using AutoMapper;
 
@@ -32,6 +30,11 @@ namespace AnimeWebSite.Services
         public async Task<Anime> GetByIdWithCommentsAsync(int id)
         {
             return await _animeRepository.GetByIdWithCommentsAsync(id);
+        }
+
+        public async Task<Anime> GetByIdWithReviewsAsync(int id)
+        {
+            return await _animeRepository.GetByIdWithReviewsAsync(id);
         }
 
         public async Task<bool> UpdateAsync( UpdateAnimeViewModel animeUpdateVM)

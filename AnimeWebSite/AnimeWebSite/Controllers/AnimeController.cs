@@ -1,11 +1,10 @@
-﻿using AnimeWebSite.Domain.Common;
+﻿using AnimeWebSite.Domain.Entities;
 using AnimeWebSite.Identity.Domain.Entities.Users;
 using AnimeWebSite.Services.Abstractions;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System.ComponentModel.DataAnnotations;
 
 namespace AnimeWebSite.Controllers
 {
@@ -27,7 +26,7 @@ namespace AnimeWebSite.Controllers
         public async Task<IActionResult> Details(int id)
         {
 
-            var anime = await _serviceManager.AnimeService.GetByIdAsync(id);
+            var anime = await _serviceManager.AnimeService.GetByIdWithReviewsAsync(id);
             if (anime is null)
             {
                 return NotFound(anime);
@@ -49,13 +48,24 @@ namespace AnimeWebSite.Controllers
         }
 
         [Authorize]
-        public async Task<IActionResult> Comment(int id, string comment)
+        [HttpGet("[controller]/make-comment/{id}")]
+        public async Task<IActionResult> Comment([FromQuery]int animeId, string comment)
         {
             var user = await _userManager.GetUserAsync(User);
 
-            await _serviceManager.CommentsService.CreateAsync(id,user,comment);
+            await _serviceManager.CommentsService.CreateAsync(animeId, user.Id,comment);
 
-            return RedirectToAction(nameof(Watching), new {id = id});
+            return Ok();
+        }
+
+
+        [Authorize]
+        public async void Review(int animeId, string review)
+        {
+            var user = await _userManager.GetUserAsync(User);
+
+            await _serviceManager.ReviewsService.CreateAsync(animeId, user.Id, review);
+
         }
     }
 }
