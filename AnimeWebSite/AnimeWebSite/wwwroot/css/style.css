@@ -1134,6 +1134,7 @@ ol {
 	background: #1d1e39;
 	padding: 18px 30px 16px 20px;
 	border-radius: 10px;
+	word-wrap: break-word;
 }
 
 .anime__review__item__text h6 {
@@ -1147,11 +1148,12 @@ ol {
 	font-weight: 400;
 }
 
-.anime__review__item__text p {
-	color: #b7b7b7;
-	line-height: 23px;
-	margin-bottom: 0;
-}
+	.anime__review__item__text p {
+		color: #b7b7b7;
+		line-height: 23px;
+		margin-bottom: 0;
+		height: auto;
+	}
 
 .anime__details__form form textarea {
 	width: 100%;
