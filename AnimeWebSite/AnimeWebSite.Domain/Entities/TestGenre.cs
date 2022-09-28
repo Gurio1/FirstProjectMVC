@@ -1,13 +1,12 @@
-﻿using AnimeWebSite.Domain.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AnimeWebSite.Domain.Common
+namespace AnimeWebSite.Domain.Entities
 {
-    public class AnimeType : BaseEntity
+    public class TestGenre : BaseEntity
     {
         public string Name { get; set; }
     }

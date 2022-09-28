@@ -1,4 +1,4 @@
-﻿using AnimeWebSite.Domain.Common;
+﻿using AnimeWebSite.Domain.Entities;
 
 namespace AnimeWebSite.Domain.Repositories
 {
