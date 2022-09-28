@@ -19,15 +19,25 @@ namespace AnimeWebSite.TagHelpers
 
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {
+            if(UserId is null)
+            {
+                throw new Exception("UserId can not be null");
+            }
+
             var user = await  _userManager.FindByIdAsync(UserId);
 
-            IList<string> roles = new List<string>();
+            string role = string.Empty;
             if (user != null)
             {
-                 roles = await _userManager.GetRolesAsync(user);
+                role =  _userManager.GetRolesAsync(user).Result.First();
             }
             
-            output.Content.SetContent(roles.Count ==0 ? "" : roles.First());
+            if(role is null)
+            {
+                throw new Exception("Role is null");
+            }
+
+            output.Content.SetContent(role is null ? "" : role);
         }
 
     }
