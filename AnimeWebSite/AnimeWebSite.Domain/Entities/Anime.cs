@@ -1,5 +1,4 @@
-﻿using AnimeWebSite.Domain.Common;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AnimeWebSite.Domain.Entities
@@ -31,7 +30,9 @@ namespace AnimeWebSite.Domain.Entities
 
         public AnimeType Type { get; set; }
 
-        public ICollection<AnimeComment> Comments { get; set; } = new List<AnimeComment>();
+        public virtual ICollection<AnimeComment> Comments { get; set; } = new List<AnimeComment>();
+
+        public virtual ICollection<AnimeReviews> Reviews { get; set; } = new List<AnimeReviews>();
 
         public enum Genre
         {
