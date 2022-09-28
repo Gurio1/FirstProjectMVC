@@ -1,14 +1,20 @@
-﻿using AnimeWebSite.Domain.Common;
-using AnimeWebSite.Domain.Entities;
+﻿using AnimeWebSite.Domain.Entities;
 using AnimeWebSite.Identity.Domain.Entities.Users;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 namespace AnimeWebSite.Infrastructure
 {
     public class AnimeWebSiteDbContext : IdentityDbContext<ApplicationUser,ApplicationRole,int>
     {
         public AnimeWebSiteDbContext(DbContextOptions<AnimeWebSiteDbContext> options) : base(options) { }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+        }
 
         public DbSet<Anime> Animes { get; set; }     
         public DbSet<AnimeComment> Comments { get; set; }
