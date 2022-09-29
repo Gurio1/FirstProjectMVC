@@ -48,8 +48,8 @@ namespace AnimeWebSite.Controllers
         }
 
         [Authorize]
-        [HttpGet("[controller]/make-comment/{id}")]
-        public async Task<IActionResult> Comment([FromQuery]int animeId, string comment)
+        [HttpPost("[controller]/make-comment")]
+        public async Task<IActionResult> Comment(int animeId, string comment)
         {
             var user = await _userManager.GetUserAsync(User);
 
